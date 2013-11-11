@@ -2,10 +2,14 @@
 
 one:
   user_id: 1
-  post_id: 1
   content: MyText
+  post_id: 1
+  commentable_type: MyString
+  commentable_id: 1
 
 two:
   user_id: 1
-  post_id: 1
   content: MyText
+  post_id: 1
+  commentable_type: MyString
+  commentable_id: 1
