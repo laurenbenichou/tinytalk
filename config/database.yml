@@ -14,7 +14,7 @@
 #
 development:
   adapter: postgresql
-  database: tinytalk_developmentrails
+  database: tinytalk_development
   host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
