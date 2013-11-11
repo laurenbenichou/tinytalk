@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
 
   def signin
-    render :signin
+  end
+
+  def action
   end
 
 end
