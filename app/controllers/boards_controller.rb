@@ -1,7 +1,6 @@
 class BoardsController < ApplicationController
   def index
-    @boards = Board.all
-    @board = Board.new
+    @posts = Post.all
     @post = Post.new
   end
 
