@@ -7,6 +7,7 @@ gem 'devise'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'pry-rails'
 
 gem 'rails_12factor', group: :production
 
@@ -41,3 +42,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 ruby '2.0.0'
 gem "paperclip", "~> 3.0"
+gem 'aws-sdk'

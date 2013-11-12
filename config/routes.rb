@@ -5,4 +5,7 @@ Tinytalk::Application.routes.draw do
 
   match "index", to: "home#index"
 
+  put "/update", to: "home#update"
+
+
 end

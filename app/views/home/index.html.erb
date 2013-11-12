@@ -2,4 +2,15 @@
 
 <%= image_tag @user.avatar.url, :class => "img-circle", :height => "100px", :width => "100px" %></br>
 
+<div id="upload-profile">
+<p>upload a profile photo</p>
+</div>
+
+<div id="upload-form">
+  <%= form_for @user, url:{ action: "update" } , :html => { :multipart => true } do |form| %>
+  <%= form.file_field :avatar %>
+  <%= form.submit %>
+  <% end %>
+</div>
+
 <%= @user.email %>
