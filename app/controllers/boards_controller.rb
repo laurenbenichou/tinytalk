@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+
   def index
     @posts = Post.all
     @post = Post.new
