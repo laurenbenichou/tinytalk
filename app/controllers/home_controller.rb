@@ -20,6 +20,7 @@ class HomeController < ApplicationController
   def update
     @user = current_user
     @user.update_attributes(params[:user])
+    redirect_to :index
   end
 
 end
