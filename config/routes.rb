@@ -3,5 +3,6 @@ Tinytalk::Application.routes.draw do
 
   root to: "home#signin"
 
-  match "profile", to: "home#profile"
+  match "index", to: "home#index"
+
 end
