@@ -10,13 +10,13 @@ class HomeController < ApplicationController
   def index
     @user = current_user
     @boards = Board.all
-    @board = Board.new
   end
 
 
   def action
   end
 
+#this updates the profile pic
   def update
     @user = current_user
     @user.update_attributes(params[:user])
