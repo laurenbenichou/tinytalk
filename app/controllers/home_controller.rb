@@ -9,7 +9,9 @@ class HomeController < ApplicationController
 
   def index
     @user = current_user
-    @boards = Board.all
+    @board = Board.new
+    @boards = @user.boards.sort!{|a, b| b.created_at <=> a.created_at}
+    gon.avatar = @user.avatar.url
   end
 
 

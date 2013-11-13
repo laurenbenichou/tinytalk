@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :medium => "300x300", :thumb => "100x100" }, :default_url => "missing.jpg"
 
 
-  has_many :boards, dependent: :destroy
+  has_many :user_boards
+  has_many :boards, :through => :user_boards, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
 end

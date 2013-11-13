@@ -5,8 +5,15 @@ class BoardsController < ApplicationController
     @post = Post.new
   end
 
-  def create
-    @board = Board.create(params[:board])
-    redirect_to boards_path
+  def new
+    @board = Board.new
   end
+
+  def create
+    @user = current_user
+    @board = @user.boards.create(params[:board])
+    render :json => @board, status: 201
+  end
+
+
 end
