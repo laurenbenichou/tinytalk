@@ -9,7 +9,8 @@ class HomeController < ApplicationController
 
   def index
     @user = current_user
-    @boards = Board.all
+    @board = Board.new
+    @boards = @user.boards
   end
 
 
