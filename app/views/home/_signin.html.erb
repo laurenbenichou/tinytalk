@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+  <div class="jumbotron">
+    <h1>Welcome!  You Signed In!</h1>
+    <p>
+      This is the home page for Tiny Talk
+    </p>
+</div>
+
+<% else %>
+  <div class="jumbotron">
+    <h1>Welcome Tiny Talk</h1>
+    <p>
+      This is the home page for Tiny Talk
+    </p>
+    <p>
+      <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+    </p>
+</div>
+<% end %>

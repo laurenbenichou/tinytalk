@@ -15,6 +15,20 @@
 //= require underscore
 //= require bootstrap
 //= require_tree ./templates
+//= require imagesloaded.pkgd.js
+//= require masonry.pkgd.js
+//= require bootstrap
 //= require_tree .
 
+
+$(function () {
+var $container = $('#pins');
+// initialize Masonry after all images have loaded
+$container.imagesLoaded( function() {
+  $container.masonry({
+    itemSelector: '.box',
+    columnWidth : 240
+  });
+});
+});
 
