@@ -5,7 +5,7 @@ $(document).ready ->
   $("#upload-profile").on "click", ->
     $("#upload-form").slideToggle "slow"
 
-  $('input[name="commit"]').on "click", (event) ->
+  $('#create_board').on "click", (event) ->
     event.preventDefault()
 
     $title = $('#board_title')
