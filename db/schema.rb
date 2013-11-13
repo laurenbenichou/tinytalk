@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20131113182459) do
-=======
-ActiveRecord::Schema.define(:version => 20131112225656) do
->>>>>>> add pins and user permissions for pins
 
   create_table "boards", :force => true do |t|
     t.string   "title"
