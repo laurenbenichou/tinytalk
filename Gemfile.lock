@@ -57,8 +57,12 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.4)
+    ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.0.2)
+    gon (4.1.1)
+      actionpack (>= 2.3.0)
+      json
     hike (1.2.3)
     i18n (0.6.5)
     journey (1.0.4)
@@ -164,6 +168,8 @@ DEPENDENCIES
   bootstrap-sass (~> 3.0.2.0)
   coffee-rails (~> 3.2.1)
   devise
+  ejs
+  gon
   jquery-rails
   paperclip (~> 3.0)
   pg

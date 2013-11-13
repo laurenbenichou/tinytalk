@@ -5,8 +5,6 @@ $(document).ready ->
   $("#upload-profile").on "click", ->
     $("#upload-form").slideToggle "slow"
 
-  board_template = _.template('<div id="<%= id %>">' + 'Title: <%= title %> <br>' + '<button data-id="<%= id  %>" data-method="delete">Delete</button></div>')
-
   $('input[name="commit"]').on "click", (event) ->
     event.preventDefault()
 
@@ -16,8 +14,10 @@ $(document).ready ->
 
     $.post("/boards", {board: params}).done (response_data) ->
       console.log(response_data)
-      board_html = board_template(response_data)
-      $("#user-boards").prepend(board_html)
+      gon.board = response_data
+      # $('#user-boards').empty()
+      html = JST["templates/boards"](response_data)
+      $("#new-boards").prepend(html)
       $("#closeModal").click()
 
 

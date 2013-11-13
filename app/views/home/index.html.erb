@@ -35,12 +35,14 @@
     </div>
   </div>
 </div>
-
+<div id="new-boards">
+</div>
 <div id="user-boards">
   <% @boards.each do |board| %>
-  <%= board.title %> </br>
+  <h3><%= board.title %></h3> </br>
   <% board.users.each do |user| %>
   <%= image_tag user.avatar.url, :class => "img-circle", :height => "30px", :width => "30px" %>
+  <button data-id="<%= board.id  %>" data-method="delete">Delete</button></div>'
   <% end %>
   <% end %>
   </div>
