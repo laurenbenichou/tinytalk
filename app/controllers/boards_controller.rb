@@ -11,7 +11,11 @@ class BoardsController < ApplicationController
 
   def create
     @user = current_user
-    @board = @user.boards.create(params[:board])
+    @added_user = User.find_by_email(params[:board][:users])
+    if @added_user
+      @board = @user.boards.create(:title => params[:board][:title])
+      @board.users << @added_user
+    end
     render :json => @board, status: 201
   end
 

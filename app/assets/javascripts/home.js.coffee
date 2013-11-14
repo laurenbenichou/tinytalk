@@ -9,10 +9,10 @@ $(document).ready ->
     event.preventDefault()
 
     $title = $('#board_title')
-    console.log($title)
-    params = {title: $title.val()}
+    $users = $('.board_users_email')
+    params = {board: {title: $title.val(), users: $users.val()}}
 
-    $.post("/boards", {board: params}).done (response_data) ->
+    $.post("/boards", params).done (response_data) ->
       console.log(response_data)
       gon.board = response_data
       # $('#user-boards').empty()
