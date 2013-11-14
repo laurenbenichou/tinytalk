@@ -43,8 +43,7 @@
 <div id="pins">
   <div id="user-boards">
     <% @boards.each do |board| %>
-    <div id="<%= board.id%>">
-      <div class="box">
+      <div id="<%= board.id %>" class="box">
         <h3><a href="/boards/<%= board.id %>"><%= board.title %></a></h3>
         <hr>
         <p>User on the board:<p>
@@ -54,7 +53,6 @@
         <button data-id="<%= board.id  %>" data-method="delete">Delete</button>
       </div>
       <% end %>
-    </div>
   </div>
 </div>
 
