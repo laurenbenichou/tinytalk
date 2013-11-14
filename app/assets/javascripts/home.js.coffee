@@ -20,4 +20,8 @@ $(document).ready ->
       $("#new-boards").prepend(html)
       $("#closeModal").click()
 
-
+  $("#user-boards").on "click", "button[data-method='delete']", (event) ->
+    id = $(this).attr("data-id")
+    $.ajax({url:"/boards/"+ id, method: "DELETE"}).done (data) ->
+      board_id = "#" + id
+      $(board_id).remove()
