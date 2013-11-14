@@ -1,0 +1,2 @@
+module TextPinsHelper
+end

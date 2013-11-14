@@ -1,4 +1,7 @@
 Tinytalk::Application.routes.draw do
+  
+
+
   resources :pins
   resources :comments, only: [:create]
 
@@ -12,6 +15,7 @@ Tinytalk::Application.routes.draw do
 
   resources :boards do
     resources :pins
+    resources :text_pins
   end
 
 end
