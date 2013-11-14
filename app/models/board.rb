@@ -3,7 +3,7 @@ class Board < ActiveRecord::Base
 
   has_many :user_boards
   has_many :users, :through => :user_boards
-  has_many :posts, dependent: :destroy
+  has_many :pins, dependent: :destroy
 
   validates :title, presence: :true
 end

@@ -25,6 +25,7 @@ class PinsController < ApplicationController
   # GET /pins/new
   # GET /pins/new.json
   def new
+    @board = Board.find(params[:board_id])
     @pin = current_user.pins.new
 
     respond_to do |format|
@@ -41,11 +42,13 @@ class PinsController < ApplicationController
   # POST /pins
   # POST /pins.json
   def create
-    @pin = current_user.pins.new(params[:pin])
+
+    @pin = current_user.pins.create(params[:pin])
+
 
     respond_to do |format|
       if @pin.save
-        format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
+        format.html { redirect_to "/boards/#{@pin.board_id}", notice: 'Pin was successfully created.' }
         format.json { render json: @pin, status: :created, location: @pin }
       else
         format.html { render action: "new" }

@@ -20,7 +20,9 @@
 
     <ul class="nav navbar-nav pull-right">
       <% if user_signed_in? %>
-      <li><%= link_to "Add +", new_pin_path %></li>
+        <% unless @board.id == nil %>
+        <li><%= link_to "Add +", new_board_pin_path(@board, @pin) %></li>
+        <% end %>
         <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
       <% else %>

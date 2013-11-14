@@ -15,5 +15,9 @@ class BoardsController < ApplicationController
     render :json => @board, status: 201
   end
 
+   def show #/boards/:id
+    @board = Board.find(params[:id])
+    @pins = @board.pins.order("created_at DESC")
+  end
 
 end

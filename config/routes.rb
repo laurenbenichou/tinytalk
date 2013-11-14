@@ -10,6 +10,8 @@ Tinytalk::Application.routes.draw do
 
   put "/update", to: "home#update"
 
-  resources :boards
+  resources :boards do
+    resources :pins
+  end
 
 end
