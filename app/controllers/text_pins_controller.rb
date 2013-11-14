@@ -3,7 +3,8 @@ class TextPinsController < ApplicationController
   # GET /text_pins
   # GET /text_pins.json
   def index
-    @text_pins = TextPin.order("created_at desc")
+    @board= Board.find(params[:board_id])
+    @text_pins = @board.text_pins.order("created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,7 +1,13 @@
+<%= render 'home/signin' %>
 <h1><%= @board.title %></h1>
 
-<%= link_to "Add Image", new_board_pin_path(@board, @pin) %>
+<%= link_to "Add Image", new_board_pin_path(@board, @pin) %><br>
+<%= link_to "Add Text", new_board_text_pin_path(@board, @pin) %><br>
+<%= link_to "See Only Images", board_pins_path(@board) %><br>
+<%= link_to "See Only Text", board_text_pins_path(@board) %><br>
+
+
 
 <div id="pins">
-  <%= render @pins %>
+<%= render @all %>
 </div>

@@ -10,9 +10,9 @@
     </p>
 
     <% if current_user == pin.user %>
-    <p>
-      <%= link_to 'Edit', edit_board_pin_path(@board,pin) %>
-      <%= link_to 'Destroy', board_pin_path(@board,pin), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </p>
+      <p>
+        <%= link_to 'Edit', edit_board_pin_path(@board,pin) %>
+        <%= link_to 'Destroy', board_pin_path(@board,pin), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
     <% end %>
 </div>

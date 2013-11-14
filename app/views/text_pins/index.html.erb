@@ -1,27 +1,21 @@
-<h1>Listing text_pins</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= render 'home/signin' %>
 
-<% @text_pins.each do |text_pin| %>
-  <tr>
-    <td><%= text_pin.title %></td>
-    <td><%= text_pin.content %></td>
-    <td><%= text_pin.user_id %></td>
-    <td><%= link_to 'Show', text_pin %></td>
-    <td><%= link_to 'Edit', edit_text_pin_path(text_pin) %></td>
-    <td><%= link_to 'Destroy', text_pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<div id ="pins">
+<% @text_pins.each do |pin| %>
+  <div class="box">
+    <p>
+    <strong>
+      <%= pin.title %>
+      </strong>
+      </p>
+      <p class="description">
+      <%= pin.content %>
+      </p>
+
+          Posted by <%= pin.user.email %>
+
+  </div>
+
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Text pin', new_text_pin_path %>
+</div>

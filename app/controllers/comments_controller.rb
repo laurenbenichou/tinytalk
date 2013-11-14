@@ -15,5 +15,4 @@ class CommentsController < ApplicationController
       redirect_to "/boards/#{@comment.board_id}/pins/#{@comment.commentable_id}"
     end
   end
-
 end
