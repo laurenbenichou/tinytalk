@@ -11,6 +11,7 @@ class HomeController < ApplicationController
     @user = current_user
     @board = Board.new
     @boards = @user.boards.sort!{|a, b| b.created_at <=> a.created_at}
+    # @users_board = board.users
     gon.avatar = @user.avatar.url
   end
 

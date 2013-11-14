@@ -3,7 +3,7 @@
 <%= image_tag @user.avatar.url, :class => "img-circle", :height => "100px", :width => "100px" %></br>
 
 <div id="upload-profile">
-<p>upload a profile photo</p>
+  <p>upload a profile photo</p>
 </div>
 
 <div id="upload-form">
@@ -14,7 +14,6 @@
 </div>
 
 <%= @user.email %></br>
-
 <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
   Create a board
 </button>
@@ -37,20 +36,23 @@
 </div>
 
 <div id="pins">
-<div id="new-boards">
-</div>
+  <div id="new-boards">
+  </div>
 </div>
 
 <div id="pins">
-<div id="user-boards">
-  <% @boards.each do |board| %>
-<div class="box">
-  <h3><a href="/boards/<%= board.id %>"><%= board.title %></a></h3> </br>
-  <% board.users.each do |user| %>
-  <%= image_tag user.avatar.url, :class => "img-circle", :height => "30px", :width => "30px" %>
-  <button data-id="<%= board.id  %>" data-method="delete">Delete</button></div>
-  <% end %>
-  <% end %>
-</div>
+  <div id="user-boards">
+    <% @boards.each do |board| %>
+    <div class="box">
+      <h3><a href="/boards/<%= board.id %>"><%= board.title %></a></h3>
+      <hr>
+      <p>User on the board:<p>
+      <% board.users.each do |user| %>
+        <%= image_tag user.avatar.url %>
+         <% end %>
+      <button data-id="<%= board.id  %>" data-method="delete">Delete</button>
+      </div>
+      <% end %>
   </div>
 </div>
+
