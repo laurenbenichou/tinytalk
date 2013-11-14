@@ -1,5 +1,7 @@
 <h1><%= @board.title %></h1>
 
+<%= link_to "Add Image", new_board_pin_path(@board, @pin) %>
+
 <div id="pins">
   <%= render @pins %>
 </div>
