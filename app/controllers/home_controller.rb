@@ -13,6 +13,7 @@ class HomeController < ApplicationController
     @boards = @user.boards.sort!{|a, b| b.created_at <=> a.created_at}
     # @users_board = board.users
     gon.avatar = @user.avatar.url
+
   end
 
 

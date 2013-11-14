@@ -31,4 +31,9 @@ class BoardsController < ApplicationController
     @all = @text_pins + @pins
   end
 
+  def destroy
+    Board.delete(params[:id])
+    render text: "removed board" , status: 200
+  end
+
 end
