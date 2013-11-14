@@ -1,6 +1,6 @@
 Tinytalk::Application.routes.draw do
   resources :pins
-
+  resources :comments, only: [:create]
 
   devise_for :users
 
