@@ -15,6 +15,9 @@ class PinsController < ApplicationController
   # GET /pins/1.json
   def show
     @pin = Pin.find(params[:id])
+    @board = params[:board_id]
+    @comment = Comment.new
+    @comments = Comment.where(commentable_type: Pin, commentable_id: @pin)
 
     respond_to do |format|
       format.html # show.html.erb
