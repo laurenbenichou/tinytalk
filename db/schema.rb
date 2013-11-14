@@ -11,9 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20131113182459) do
-
+ActiveRecord::Schema.define(:version => 20131113230936) do
 
   create_table "boards", :force => true do |t|
     t.string   "title"
@@ -51,6 +49,14 @@ ActiveRecord::Schema.define(:version => 20131113182459) do
     t.boolean  "done"
     t.integer  "board_id"
     t.string   "file"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "text_pins", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

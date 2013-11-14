@@ -15,4 +15,5 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :pins, dependent: :destroy
+  has_many :text_pins, dependent: :destroy
 end

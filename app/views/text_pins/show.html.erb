@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @text_pin.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @text_pin.content %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @text_pin.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_text_pin_path(@text_pin) %> |
+<%= link_to 'Back', text_pins_path %>

@@ -1,4 +1,7 @@
 Tinytalk::Application.routes.draw do
+  resources :text_pins
+
+
   resources :pins
 
 

@@ -1,0 +1,21 @@
+<div class="box">
+  <strong><%= link_to (text_pin.title), text_pin %></strong>
+
+
+    <p class="description">
+    <%= text_pin.content %>
+    </p>
+    <p>
+      <strong>
+        Posted by <%= text_pin.user.email %>
+      </strong>
+    </p>
+
+    <% if current_user == text_pin.user %>
+    <p>
+      <%= link_to 'Edit', edit_text_pin_path(text_pin) %>
+      <%= link_to 'Destroy', text_pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+    <% end %>
+</div>
+
