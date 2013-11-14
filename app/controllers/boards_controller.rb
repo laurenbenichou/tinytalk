@@ -20,8 +20,4 @@ class BoardsController < ApplicationController
     @pins = @board.pins.order("created_at DESC")
   end
 
-  def edit
-    @board = current_user.baords.find(params[:id])
-  end
-
 end
