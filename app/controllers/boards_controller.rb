@@ -16,7 +16,7 @@ class BoardsController < ApplicationController
 
   def create
     @user = current_user
-    @added_user = User.find_by_email(params[:board][:users])
+    @added_user = User.find_by_username(params[:board][:users])
     if @added_user
       @board = @user.boards.create(:title => params[:board][:title])
       @board.users << @added_user
