@@ -72,8 +72,8 @@ Tinytalk::Application.configure do
     :s3_credentials => {
     :bucket => "tinytalk",
     :access_key_id => "AKIAIKF7ZYOQS7K6AZJQ",
-    :secret_access_key => "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"
-    # :s3_host_name => 's3-us-west-1.amazonaws.com'
+    :secret_access_key => "hsk5RJXPrybDgH90fuLThVln9HgtFNEOdD4lao8d",
+    :s3_host_name => 's3-us-west-1.amazonaws.com'
     }
   }
 end
