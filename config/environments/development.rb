@@ -40,10 +40,10 @@ Tinytalk::Application.configure do
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => "wdi-paperclip",
-    :access_key_id => "AKIAIGS4WPWXXXXXXXX",
-    :secret_access_key => "hCz6YlZnYK8A5LhlXXXXXXXXXXX",
-    :s3_host_name => 's3-us-west-1.amazonaws.com'
+    :bucket => "tinytalk",
+    :access_key_id => "AKIAILQZW6CBP7SMHW3Q",
+    :secret_access_key => "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"
+    # :s3_host_name => 's3-us-west-1.amazonaws.com'
   }
 }
 end
