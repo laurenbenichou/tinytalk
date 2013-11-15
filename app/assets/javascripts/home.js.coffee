@@ -12,6 +12,8 @@ $(document).ready ->
     users = $('.board_users_email').val()
     if users == "" or title == ""
       alert "You have to input a title and a user to create a board!"
+    else if users == gon.current_user
+      alert "You can't use your own email"
     else
       params = {board: {title: title, users: users}}
 
