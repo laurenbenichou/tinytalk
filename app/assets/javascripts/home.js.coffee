@@ -12,23 +12,20 @@ $(document).ready ->
 
   $('#create_board').on "click", (event) ->
     event.preventDefault()
-    debugger
+
     title = $('#board_title').val()
-
-    users = $('.board_users_username').map (input) ->
-      input.val().toLowerCase()
-
+    users = $('.board_users_username').map (index, input) ->
+      $(input).val().toLowerCase()
 
     if users == "" or title == ""
       alert "You have to input a title and a user to create a board!"
     else if users == gon.current_user
       alert "You can't use your own email"
     else
-      params = {board: {title: title, users: users}}
+      params = {board: {title: title, users: users.toArray()}}
 
       $.post("/boards", params).done (response_data) ->
         console.log(response_data)
-        # $('#user-boards').empty()
         html = JST["templates/boards"](response_data)
         $("#new-boards").prepend(html)
         $("#closeModal").click()
