@@ -5,6 +5,11 @@ $(document).ready ->
   $("#upload-profile").on "click", ->
     $("#upload-form").slideToggle "slow"
 
+
+  $('#add-users').on "click", ->
+    form = JST["templates/users"]
+    $("#user-form").append(form)
+
   $('#create_board').on "click", (event) ->
     event.preventDefault()
 
