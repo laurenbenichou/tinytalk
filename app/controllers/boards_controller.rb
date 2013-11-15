@@ -19,7 +19,7 @@ class BoardsController < ApplicationController
 
     @users = params[:board][:users].map do |username|
       User.find_by_username(username)
-    end
+    end.compact
 
     if @users.present?
       @board = @user.boards.create(:title => params[:board][:title])

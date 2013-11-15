@@ -20,7 +20,7 @@ $(document).ready ->
     if users == "" or title == ""
       alert "You have to input a title and a user to create a board!"
     else if users == gon.current_user
-      alert "You can't use your own email"
+      alert "You can't use your own username"
     else
       params = {board: {title: title, users: users.toArray()}}
 

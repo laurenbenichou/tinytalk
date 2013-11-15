@@ -9,7 +9,7 @@ class HomeController < ApplicationController
 
   def index
     @user = current_user
-    gon.current_user = @user.email
+    gon.current_user = @user.username
     @board = Board.new
     @boards = @user.boards.sort!{|a, b| b.created_at <=> a.created_at}
   end
