@@ -16,11 +16,18 @@ class BoardsController < ApplicationController
 
   def create
     @user = current_user
-    @added_user = User.find_by_username(params[:board][:users])
-    if @added_user
-      @board = @user.boards.create(:title => params[:board][:title])
-      @board.users << @added_user
+
+    @users = params[:board][:users].map do |username|
+      User.find_by_username(username)
     end
+
+    if @users.present?
+      @board = @user.boards.create(:title => params[:board][:title])
+      @users.each do |user|
+        @board.users << user
+      end
+    end
+
     render :json => {board: @board, users: @board.users}, status: 201
   end
 
