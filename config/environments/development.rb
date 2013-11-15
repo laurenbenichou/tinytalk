@@ -36,4 +36,14 @@ Tinytalk::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => "wdi-paperclip",
+    :access_key_id => "AKIAIGS4WPWXXXXXXXX",
+    :secret_access_key => "hCz6YlZnYK8A5LhlXXXXXXXXXXX",
+    :s3_host_name => 's3-us-west-1.amazonaws.com'
+  }
+}
 end
