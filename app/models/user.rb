@@ -6,9 +6,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :avatar
+  attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :avatar
   has_attached_file :avatar, :styles => { :medium => "300x300", :thumb => "100x100" }, :default_url => "missing.jpg"
 
+  validates :username, uniqueness: true
 
   has_many :user_boards
   has_many :boards, :through => :user_boards, dependent: :destroy
