@@ -42,8 +42,8 @@ Tinytalk::Application.configure do
   :s3_credentials => {
     :bucket => "wdi-paperclip",
     :access_key_id => "AKIAIGS4WPWXXXXXXXX",
-    :secret_access_key => "hCz6YlZnYK8A5LhlXXXXXXXXXXX",
-    :s3_host_name => 's3-us-west-1.amazonaws.com'
+    :secret_access_key => "hCz6YlZnYK8A5LhlXXXXXXXXXXX"
+    # :s3_host_name => 's3-us-west-1.amazonaws.com'
   }
 }
 end
