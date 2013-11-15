@@ -14,7 +14,23 @@
   <b>User:</b>
   <%= @text_pin.user_id %>
 </p>
+<p>
+  <% @comments.each do |comment| %>
+    <p>
+    <strong><%= User.find(comment.user_id).id %></strong>: <%= comment.content %>
+    </p>
+  <% end %>
+</p>
 
+<%= form_for @comment do |f| %>
+  <%= f.text_area :content, placeholder: "Enter Comment Here" %>
+  <%= f.hidden_field :commentable_type, value: "Text_Pin" %>
+  <%= f.hidden_field :commentable_id, value: @text_pin.id %>
+  <%= f.hidden_field :board_id, value: @board %>
+  <%= f.submit %>
+<% end %>
 
-<%= link_to 'Edit', edit_text_pin_path(@text_pin) %> |
-<%= link_to 'Back', text_pins_path %>
+<% if current_user == @text_pin.user %>
+<%= link_to 'Edit', edit_board_text_pin_path(@board) %>
+<% end %>
+<%= link_to 'Back', board_path(@board) %>
