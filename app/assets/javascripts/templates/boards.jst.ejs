@@ -1,4 +1,11 @@
-<div class="box">
-  <h3><a href="/boards/<%=gon.board.id%>"><%= gon.board.title %></a></h3></br>
+<div id="<%=board.id%>" class="box">
+  <h3><a href="/boards/<%=board.id%>"><%= board.title %></a></h3>
+  <hr>
+  <p>User on the board:<p>
+  <% for(var index in users){ %>
+  <img id ="avatar" src="/system/users/avatars/000/000/00<%=users[index].id%>/original/<%= users[index].avatar_file_name %>">
+<%}%>
+
+<button data-id="<%= board.id  %>" data-method="delete">Delete</button>
 </div>
 

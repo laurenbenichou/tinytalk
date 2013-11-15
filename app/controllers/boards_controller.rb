@@ -21,7 +21,7 @@ class BoardsController < ApplicationController
       @board = @user.boards.create(:title => params[:board][:title])
       @board.users << @added_user
     end
-    render :json => @board, status: 201
+    render :json => {board: @board, users: @board.users}, status: 201
   end
 
    def show #/boards/:id

@@ -14,14 +14,16 @@ $(document).ready ->
 
     $.post("/boards", params).done (response_data) ->
       console.log(response_data)
-      gon.board = response_data
       # $('#user-boards').empty()
       html = JST["templates/boards"](response_data)
       $("#new-boards").prepend(html)
       $("#closeModal").click()
 
-  $(".box").on "click", "button[data-method='delete']", (event) ->
+
+  $("#wrapper").on "click", "button[data-method='delete']", (event) ->
     id = $(this).attr("data-id")
-    $.ajax({url:"/boards/"+ id, method: "DELETE"}).done (data) ->
-      board_id = "#" + id
-      $(board_id).remove()
+    answer = confirm ("Are you sure you want to delete this board? This is final and cannot be undone.")
+    if (answer)
+      $.ajax({url:"/boards/"+ id, method: "DELETE"}).done (data) ->
+        board_id = "#" + id
+        $(board_id).remove()
