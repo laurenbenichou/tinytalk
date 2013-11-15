@@ -13,6 +13,8 @@ class CommentsController < ApplicationController
 
     if @comment.commentable_type == "Pin"
       redirect_to "/boards/#{@comment.board_id}/pins/#{@comment.commentable_id}"
+    else
+      redirect_to "/boards/#{@comment.board_id}/text_pins/#{@comment.commentable_id}"
     end
   end
 end

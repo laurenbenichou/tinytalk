@@ -1,6 +1,5 @@
-<h1>Editing text_pin</h1>
+<h1>Editing Text Pin</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @text_pin %> |
-<%= link_to 'Back', text_pins_path %>
+<%= link_to 'Back', board_text_pins_path(@board, @text_pin) %>
