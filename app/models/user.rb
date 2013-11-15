@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 
   validates :username, uniqueness: true
 
+  before_save { self.email = email.downcase }
+
   has_many :user_boards
   has_many :boards, :through => :user_boards, dependent: :destroy
   has_many :posts, dependent: :destroy
