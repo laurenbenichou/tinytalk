@@ -15,7 +15,7 @@ class TextPinsController < ApplicationController
   # GET /text_pins/1
   # GET /text_pins/1.json
   def show
-    @text_pin = current_user.text_pins.find(params[:id])
+    @text_pin = TextPin.find(params[:id])
     @board = params[:board_id]
     @comment = Comment.new
     @comments = Comment.where(commentable_type: 'Text_Pin', commentable_id: @text_pin)
