@@ -8,16 +8,19 @@ $(document).ready ->
   $('#create_board').on "click", (event) ->
     event.preventDefault()
 
-    $title = $('#board_title')
-    $users = $('.board_users_email')
-    params = {board: {title: $title.val(), users: $users.val()}}
+    title = $('#board_title').val()
+    users = $('.board_users_email').val()
+    if users == "" or title == ""
+      alert "You have to input a title and a user to create a board!"
+    else
+      params = {board: {title: title, users: users}}
 
-    $.post("/boards", params).done (response_data) ->
-      console.log(response_data)
-      # $('#user-boards').empty()
-      html = JST["templates/boards"](response_data)
-      $("#new-boards").prepend(html)
-      $("#closeModal").click()
+      $.post("/boards", params).done (response_data) ->
+        console.log(response_data)
+        # $('#user-boards').empty()
+        html = JST["templates/boards"](response_data)
+        $("#new-boards").prepend(html)
+        $("#closeModal").click()
 
 
   $("#wrapper").on "click", "button[data-method='delete']", (event) ->
