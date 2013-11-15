@@ -1,4 +1,4 @@
-<h1>Welcome to your profile</h1>
+<h1>Welcome <%= @user.username%></h1>
 
 <%= image_tag @user.avatar.url, :class => "img-circle", :height => "100px", :width => "100px" %></br>
 
@@ -13,7 +13,7 @@
   <% end %>
 </div>
 
-<%= @user.email %></br>
+<%= @user.username %></br>
 <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
   Create a board
 </button>

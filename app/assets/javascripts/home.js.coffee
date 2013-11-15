@@ -5,11 +5,20 @@ $(document).ready ->
   $("#upload-profile").on "click", ->
     $("#upload-form").slideToggle "slow"
 
+
+  $('#add-users').on "click", ->
+    form = JST["templates/users"]
+    $("#user-form").append(form)
+
   $('#create_board').on "click", (event) ->
     event.preventDefault()
-
+    debugger
     title = $('#board_title').val()
-    users = $('.board_users_email').val().toLowerCase()
+
+    users = $('.board_users_username').map (input) ->
+      input.val().toLowerCase()
+
+
     if users == "" or title == ""
       alert "You have to input a title and a user to create a board!"
     else if users == gon.current_user
