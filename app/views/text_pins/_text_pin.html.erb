@@ -1,5 +1,6 @@
 <div class="box">
-  <%= text_pin.title %>
+  <strong><%= link_to (text_pin.title), board_text_pin_path(@board, text_pin) %></strong>
+
     <p class="description">
       <%= text_pin.content %>
     </p>
