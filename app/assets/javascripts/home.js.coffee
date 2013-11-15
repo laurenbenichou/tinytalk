@@ -26,6 +26,7 @@ $(document).ready ->
 
       $.post("/boards", params).done (response_data) ->
         console.log(response_data)
+        # $('#user-boards').empty()
         html = JST["templates/boards"](response_data)
         $("#new-boards").prepend(html)
         $("#closeModal").click()
