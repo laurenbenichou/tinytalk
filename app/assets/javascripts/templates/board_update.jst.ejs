@@ -1,0 +1,24 @@
+<form>
+  <div>
+    Update Title: <input id="board_title" type="text" name="<%= board.title%>">
+  </div>
+  <div>
+<hr>
+<h4>Users:</h4>
+  <hr>
+ <% for(var index in board.users){ %>
+    <%= board.users[index].username %>
+    <% if (board.users[index].avatar_file_name == null){ %>
+    <img id ="avatar-update" src="/assets/missing.jpg">
+    <% } else {%>
+    <img id ="avatar-update" src="/system/users/avatars/000/000/00<%=board.users[index].id%>/original/<%= board.users[index].avatar_file_name %>">
+    <%}%>
+    <h3 class="x-delete">x</h3>
+    <hr>
+  <%}%>
+
+  </div>
+  <div>
+    <input id="update_board" type="submit">
+  </div>
+</form>

@@ -1,13 +1,11 @@
 class BoardsController < ApplicationController
-
   def index
     # @posts = Post.all
     # @post = Post.new
-    @board= Board.find(params[:board_id])
+    @board = Board.find(params[:board_id])
     @text_pins = @board.text_pins
     @pins = @board.pins
     @all = @text_pins + @pins
-
   end
 
   def new
@@ -31,16 +29,29 @@ class BoardsController < ApplicationController
     render :json => {board: @board, users: @board.users}, status: 201
   end
 
-   def show #/boards/:id
+   def show
     @board = Board.find(params[:id])
+    @users = @board.users
     @pins = @board.pins.order("created_at DESC")
     @text_pins = @board.text_pins.order("created_at DESC")
     @all = @text_pins + @pins
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => {board: @board, users: @users}}
+    end
   end
 
   def destroy
     Board.delete(params[:id])
     render text: "removed board" , status: 200
+  end
+
+  def update
+    @board = BucketItem.find(params[:id])
+    gon.board = @board
+    @board.update_attributes(params[:board])
+    render nothing: true, status: :success
   end
 
 end

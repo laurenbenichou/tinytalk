@@ -5,6 +5,21 @@ $(document).ready ->
   $("#upload-profile").on "click", ->
     $("#upload-form").slideToggle "slow"
 
+  $("#close1").on "click", ->
+    $("#board_title").val("")
+    $(".board_users_username").val("")
+    $("#user-form").empty()
+
+  $('#closeModal1').on "click", ->
+    $("#board_title").val("")
+    $(".board_users_username").val("")
+    $("#user-form").empty()
+
+  $("#close2").on "click", ->
+    $("#modal-body2").empty()
+
+  $('#closeModal2').on "click", ->
+    $("#modal-body2").empty()
 
   $('#add-users').on "click", ->
     form = JST["templates/users"]
@@ -39,3 +54,9 @@ $(document).ready ->
       $.ajax({url:"/boards/"+ id, method: "DELETE"}).done (data) ->
         board_id = "#" + id
         $(board_id).remove()
+
+  $("#wrapper").on "click", "button[data-target='#myModal2']", (event) ->
+    id = $(this).attr("data-id")
+    $.getJSON("/boards/#{id}").done (board) ->
+      update_form = JST["templates/board_update"]({board: board})
+      $("#modal-body2").append(update_form)
