@@ -32,3 +32,32 @@ $container.imagesLoaded( function() {
 });
 });
 
+var comment_template = _.template('<p><strong><%= user.username %></strong>: <%= comment.content %></p>')
+
+$(function() {
+  $('#commentsubmit').click(function(event) {
+    event.preventDefault();
+    var $content = $('#comment_content')
+    var $commtype = $('#comment_commentable_type')
+    var $commid = $('#comment_commentable_id')
+    var $boardid = $('#comment_board_id')
+
+    var params = { comment: {content: $content.val(), commentable_type: $commtype.val(), commentable_id: $commid.val(), board_id: $boardid.val()}};
+
+    $content.val("")
+
+    $.post("/comments", params).done(function(data){
+       var comment = comment_template(data)
+      $('#allcomments').append(comment);
+    })
+  })
+})
+// $(function() {
+//   $('.box').on('click', 'input[type="checkbox"]', function(event){
+//     var pinid = $(this).attr('pin-id');
+//     var pintype = $(this).attr('pin-type');
+//     var checked = this.checked;
+//   });
+// })
+
+

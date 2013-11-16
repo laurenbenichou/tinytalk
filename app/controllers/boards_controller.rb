@@ -1,15 +1,5 @@
 class BoardsController < ApplicationController
 
-  def index
-    # @posts = Post.all
-    # @post = Post.new
-    @board= Board.find(params[:board_id])
-    @text_pins = @board.text_pins
-    @pins = @board.pins
-    @all = @text_pins + @pins
-
-  end
-
   def new
     @board = Board.new
   end
@@ -33,9 +23,8 @@ class BoardsController < ApplicationController
 
    def show #/boards/:id
     @board = Board.find(params[:id])
-    @pins = @board.pins.order("created_at DESC")
-    @text_pins = @board.text_pins.order("created_at DESC")
-    @all = @text_pins + @pins
+    @all = @board.pins + @board.text_pins
+    @all.sort! {|a, b| b.created_at <=> a.created_at}
   end
 
   def destroy

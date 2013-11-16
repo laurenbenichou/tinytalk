@@ -4,20 +4,21 @@
   <%= @pin.description %>
   <%= @pin.user.email %>
 </p>
-<p>
-  <% @comments.each do |comment| %>
-    <p>
-    <strong><%= User.find(comment.user_id).id %></strong>: <%= comment.content %>
-    </p>
-  <% end %>
-</p>
-
+<div id="allcomments">
+  <p>
+    <% @comments.each do |comment| %>
+      <p>
+      <strong><%= User.find(comment.user_id).username %></strong>: <%= comment.content %>
+      </p>
+    <% end %>
+  </p>
+</div>
 <%= form_for @comment do |f| %>
   <%= f.text_area :content, placeholder: "Enter Comment Here" %>
   <%= f.hidden_field :commentable_type, value: "Pin" %>
   <%= f.hidden_field :commentable_id, value: @pin.id %>
   <%= f.hidden_field :board_id, value: @board %>
-  <%= f.submit %>
+  <%= f.submit 'Submit Comment', id: "commentsubmit" %>
 <% end %>
 
 <% if current_user == @pin.user %>
