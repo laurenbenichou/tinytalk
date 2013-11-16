@@ -5,12 +5,9 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.save
 
-    # redirect_to index_path
-
-    if @comment.commentable_type == "Pin"
-      redirect_to "/boards/#{@comment.board_id}/pins/#{@comment.commentable_id}"
-    else
-      redirect_to "/boards/#{@comment.board_id}/text_pins/#{@comment.commentable_id}"
-    end
+    render :json => {
+      comment: @comment,
+      user: @current_user
+    }, status: 201
   end
 end
