@@ -7,6 +7,6 @@
   <% if (users[index].avatar_file_name == null){ %>
        <img id ="avatar" src="/assets/missing.jpg">
     <% } else {%>
-        <img id ="avatar" src="/system/users/avatars/000/000/00<%=users[index].id%>/original/<%= users[index].avatar_file_name %>">
+        <img id ="avatar" src="http://s3-us-west-1.amazonaws.com/tinytalk/users/avatars/000/000/0<%=users[index].id%>/original/<%= users[index].avatar_file_name %>">
     <% } %>
 <%}%>
