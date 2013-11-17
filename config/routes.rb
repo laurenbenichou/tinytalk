@@ -10,6 +10,8 @@ Tinytalk::Application.routes.draw do
 
   put "/update", to: "home#update"
 
+  match 'boards/remove_user_from_board/:board_id/:user_id' => 'boards#remove_user_from_board'
+
   resources :boards do
     resources :pins
     resources :text_pins

@@ -47,11 +47,31 @@ class BoardsController < ApplicationController
     render text: "removed board" , status: 200
   end
 
+  def remove_user_from_board
+    board = Board.find(params[:board_id])
+    board.users.delete(User.find(params[:user_id]))
+    render text: "removed user" , status: 200
+  end
+
   def update
-    @board = Board.find(params[:id])
+    board = Board.find(params[:id])
     gon.board = @board
-    @board.update_attributes(params[:board])
-    render :json => @board, status: 201
+
+    @users = params[:board][:users].map do |username|
+      User.find_by_username(username)
+    end.compact
+
+    if @users.present? && @users.length > 1
+      @board = board.update_attributes(:title => params[:board][:title])
+      @users.each do |user|
+        board.users << user
+      end
+    else
+      @board = board.update_attributes(:title => params[:board][:title])
+      board.users << @users
+    end
+
+    render :json => {board: board, users: board.users}, status: 201
   end
 
 end
