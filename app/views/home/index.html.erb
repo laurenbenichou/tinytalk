@@ -46,7 +46,9 @@
     <div id="user-boards">
       <% @boards.each do |board| %>
         <div id="<%= board.id %>" class="box">
+          <div id="title_<%= board.id %>">
           <h3><a href="/boards/<%= board.id %>"><%= board.title %></a></h3>
+          </div>
           <hr>
           <p>User on the board:<p>
           <% board.users.each do |user| %>
@@ -60,6 +62,7 @@
   </div>
 </div>
 
+<div id="wrapper-update">
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -76,6 +79,6 @@
     </div>
   </div>
 </div>
-
+</div>
 
 

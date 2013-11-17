@@ -48,10 +48,10 @@ class BoardsController < ApplicationController
   end
 
   def update
-    @board = BucketItem.find(params[:id])
+    @board = Board.find(params[:id])
     gon.board = @board
     @board.update_attributes(params[:board])
-    render nothing: true, status: :success
+    render :json => @board, status: 201
   end
 
 end
