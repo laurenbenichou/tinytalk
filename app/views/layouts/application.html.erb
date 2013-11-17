@@ -2,19 +2,139 @@
 <html>
 <head>
   <title>Tiny Talk</title>
+  <meta charset="utf-8">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <%= include_gon %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <%= render 'layouts/header' %>
-    <div class="container">
-      <% flash.each do |name, msg| %>
-        <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-        <% end %>
+<body >
+  <div class="preloader"></div>
+  <div class="mobile-nav-container">
+
+    <div class="mobile-nav-bar">
+
+        <button type="button" class="btn-mobile-nav" data-toggle="collapse" data-target="#mobile-nav"></button>
+
+      <!-- Mobile Logo -->
+      <div class="logo-image">
+        <a>
+          <img src="img/logo_mobile.png" alt=""/>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drop Down -->
+    <div id="mobile-nav" class="collapse">
+      <ul>
+         <li><a href="index.html">Blog</a></li>
+        <li class="dropdown"><a href="#">Features</a>
+          <ul class="sub-menu">
+            <li><a href="typography.html">Typography</a></li>
+            <li><a href="elements.html">Elements</a></li>
+            <li><a href="full-width.html">Full Width Page/Post</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- END Mobile Navigation -->
+
+  <!-- BEGIN Side Nav -->
+  <div class="side-nav">
+
+    <!-- Side Nav Logo -->
+    <div class="side-nav-logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt=""/>
+      </a>
+    </div>
+
+    <!-- Side Nav Text -->
+    <div class="side-nav-bio">
+      <p>This is an awesome personal blog to write about awesome things</p>
+    </div>
+
+    <!-- Side Nav Menu -->
+    <ul class="side-nav-menu">
+      <li><a href="index.html">Portfolio</a></li>
+      <li class="dropdown"><a href="#">Features</a>
+        <ul class="sub-menu">
+          <li><a href="typography.html">Typography</a></li>
+          <li><a href="elements.html">Elements</a></li>
+          <li><a href="full-width.html">Full Width Page/Post</a></li>
+        </ul>
+      </li>
+        <li class="current_page_item"><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Side Nav Widgets -->
+    <div class="side-nav-widget">
+      <div class="side-nav-widget-inner">
+        <ul>
+          <li class="widget widget_search">
+            <form role="search" method="get" id="searchform" action="#">
+                <input type="text" placeholder="Search" value="" name="s" id="s" />
+                <input type="submit" id="searchsubmit" value="Search" />
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Side Nav Footer -->
+    <div class="side-nav-footer">
+      <ul>
+        <li>
+          <a href="#" rel="alternate" data-original-title="Pinterest">
+            <img height="24" src="img/icons/glyphicons_360_pinterest@2x.png" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#" rel="alternate" data-original-title="LinkedIn">
+            <img height="24" src="img/icons/glyphicons_377_linked_in@2x.png" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#" rel="alternate" data-original-title="Twitter">
+            <img height="24" src="img/icons/glyphicons_392_twitter@2x.png" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#" rel="alternate" data-original-title="Facebook">
+            <img height="24" src="img/icons/glyphicons_390_facebook@2x.png" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#" rel="alternate" data-original-title="Dribbble">
+            <img height="24" src="img/icons/glyphicons_374_dribbble@2x.png" alt="" />
+          </a>
+        </li>
+      </ul>
+      <p>This is some awesome copyright text</p>
+    </div>
+
+  </div>
+
+  <ul class="category-filter">
+    <li><a href="#filter=" class="selected">All Posts</a></li>
+    <li><a href="#filter=.audio">Audio</a></li>
+    <li><a href="#filter=.image">Image</a></li>
+    <li><a href="#filter=.link">Link</a></li>
+    <li><a href="#filter=.quote">Quote</a></li>
+    <li><a href="#filter=.standard">Standard</a></li>
+    <li><a href="#filter=.video">Video</a></li>
+  </ul>
+
       <%= yield %>
-    <%= render 'layouts/footer' %>
     </div>
 
   </body>

@@ -1,3 +1,38 @@
+
+      <div class="isotope-post span4 standard">
+        <div>
+
+            <div class="entry drop-shadow curved">
+
+              <!-- Title -->
+              <h5 class="heading">
+                <%= link_to text_pin.title, board_text_pin_path(text_pin.board_id,text_pin.id)%></a>
+              </h5>
+
+              <!-- Content -->
+              <p><%= text_pin.content %><%= link_to "Read More", board_text_pin_path(text_pin.board_id,text_pin.id)%></p>
+
+              <!-- Meta -->
+              <ul class="entry-meta">
+                <li class="time">Posted by <%= text_pin.user.email %></li>
+              </ul>
+
+            </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+<%
+=begin %>
 <div class="box">
   <strong><%= link_to (text_pin.title), board_text_pin_path(@board, text_pin) %></strong>
 
@@ -17,3 +52,5 @@
       </p>
     <% end %>
 </div>
+<%
+=end %>

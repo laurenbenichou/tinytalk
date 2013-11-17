@@ -1,3 +1,41 @@
+<div id="main-container">
+    <div class="container">
+
+      <div class="row">
+        <div class="span8 post-center">
+
+          <!-- Image -->
+
+
+          <%=image_tag(@pin.image,:class => "entry-image" )%>
+
+            <div class="entry drop-shadow curved ">
+
+              <!-- Title -->
+              <h1 class="heading"><%=User.find(@pin.user_id).username %></h1>
+
+              <!-- Content -->
+              <p><%= @pin.description%></p>
+
+              <!-- Meta -->
+              <ul class="entry-meta">
+                <li class="time"><%=@pin.created_at %></li>
+              </ul>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+<%
+=begin %>
 <p>
   <%=image_tag @pin.image(:medium) %>
   <b>Description:</b>
@@ -27,3 +65,5 @@
 <%= link_to 'Back', board_path(@board) %>
 
 <br><br>
+<%
+=end %>

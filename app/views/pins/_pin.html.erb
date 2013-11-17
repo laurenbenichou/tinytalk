@@ -1,3 +1,41 @@
+<div class="isotope-post span4 image">
+        <div>
+
+          <!-- Thumbnail -->
+
+
+          <a href="<%=pin.image %>" class="fancybox entry-image">
+            <span class="entry-image-overlay"></span>
+            <img src="<%=pin.image %>" alt="" />
+          </a>
+
+            <div class="entry drop-shadow curved">
+
+              <!-- Title -->
+              <h1 class="heading">
+                <a href="single-post-image.html">Space Monkey</a>
+              </h1>
+
+              <!-- Content -->
+              <p><%=pin.description %></p>
+
+              <!-- Meta -->
+              <ul class="entry-meta">
+                <li class="time">2 months ago</li>
+              </ul>
+
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+<%
+=begin %>
 <div class="box">
     <%= link_to (image_tag pin.image(:medium)), board_pin_path(@board, pin) %>
     <p class="description">
@@ -19,3 +57,5 @@
 
     <input type="checkbox" id="p" name="check_all_1" title="Select All" onclick="this.parentNode.style.backgroundColor='red';">
 </div>
+<%
+=end %>

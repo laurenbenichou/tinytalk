@@ -1,37 +1,89 @@
 <p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
 
-<p>
-  <b>Title:</b>
-  <%= @text_pin.title %>
-</p>
+    <meta charset="utf-8">
 
-<p>
-  <b>Content:</b>
-  <%= @text_pin.content %>
-</p>
+    <title>Spaces » Standard Post</title>
 
-<p>
-  <b>User:</b>
-  <%= @text_pin.user_id %>
-</p>
-<div id="allcomments">
-  <p>
-    <% @comments.each do |comment| %>
-      <p>
-      <strong><%= User.find(comment.user_id).username %></strong>: <%= comment.content %>
-      </p>
-    <% end %>
-  </p>
-</div>
-<%= form_for @comment do |f| %>
-  <%= f.text_area :content, placeholder: "Enter Comment Here" %>
-  <%= f.hidden_field :commentable_type, value: "Text_Pin" %>
-  <%= f.hidden_field :commentable_id, value: @text_pin.id %>
-  <%= f.hidden_field :board_id, value: @board %>
-  <%= f.submit 'Submit Comment', id: "commentsubmit" %>
-<% end %>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<% if current_user == @text_pin.user %>
-<%= link_to 'Edit', edit_board_text_pin_path(@board) %>
-<% end %>
-<%= link_to 'Back', board_path(@board) %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body class="home blog">
+
+  <!-- Grid -->
+  <div id="main-container">
+    <div class="container">
+
+      <div class="row">
+        <div class="span8 post-center">
+
+            <div class="entry drop-shadow curved ">
+
+              <!-- Title -->
+              <h1 class="heading"><%=@text_pin.title %></h1>
+
+              <!-- Content -->
+              <p><%=@text_pin.content %></p>
+
+              <!-- Meta -->
+              <ul class="entry-meta">
+                <li class="time">1 month ago</li>
+              </ul>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mobile-footer">
+    <ul>
+      <li>
+        <a href="#" rel="alternate" data-original-title="Pinterest"><img height="24" src="img/icons/glyphicons_360_pinterest@2x.png" alt="" /></a>
+      </li>
+
+      <li>
+        <a href="#" rel="alternate" data-original-title="LinkedIn"><img height="24" src="img/icons/glyphicons_377_linked_in@2x.png" alt="" /></a>
+      </li>
+
+      <li>
+        <a href="#" rel="alternate" data-original-title="Twitter"><img height="24" src="img/icons/glyphicons_392_twitter@2x.png" alt="" /></a>
+      </li>
+
+      <li>
+        <a href="#" rel="alternate" data-original-title="Facebook"><img height="24" src="img/icons/glyphicons_390_facebook@2x.png" alt="" /></a>
+      </li>
+
+      <li>
+        <a href="#" rel="alternate" data-original-title="Dribbble"><img height="24" src="img/icons/glyphicons_374_dribbble@2x.png" alt="" /></a>
+      </li>
+
+    </ul>
+    <p>This is some awesome copyright text</p>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
