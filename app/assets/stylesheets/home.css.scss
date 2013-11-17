@@ -2,32 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// #upload-form{
-//   display: none;
-// }
+#upload-form{
+  display: none;
+}
 
-// #upload-profile:hover{
-// text-decoration: underline;
-// }
+#upload-profile:hover{
+text-decoration: underline;
+}
 
-// #avatar{
-//   width: auto;
-//   height: 30px;
-//   border-radius: 50px;
-//   float: left;
-// }
 
-// .box button{
-//   float:right;
-// }
+#avatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  float: left;
+}
 
-// #avatar-update{
-//   width: auto;
-//   height: 30px;
-//   border-radius: 50px;
-// }
+.box button{
+  float:right;
+}
 
-// .user-remove{
-//   float: right;
-// }
+
+#avatar-update{
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+
+.user-remove{
+  float: right;
+}
 
