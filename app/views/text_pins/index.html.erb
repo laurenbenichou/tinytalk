@@ -1,21 +1,31 @@
+<div id="main-container">
+    <div id="container">
 
-<%= render 'home/signin' %>
+      <% @text_pins.each do |pin| %>
+      <div class="isotope-post span4 standard">
+        <div>
 
-<div id ="pins">
-<% @text_pins.each do |pin| %>
-  <div class="box">
-    <p>
-    <strong>
-      <%= pin.title %>
-      </strong>
-      </p>
-      <p class="description">
-      <%= pin.content %>
-      </p>
+            <div class="entry drop-shadow curved">
 
-          Posted by <%= pin.user.email %>
+              <!-- Title -->
+              <h5 class="heading">
+                <%= link_to pin.title, board_text_pin_path(pin.board_id,pin.id)%></a>
+              </h5>
 
+              <!-- Content -->
+              <p><%= pin.content %><%= link_to "Read More", board_text_pin_path(pin.board_id,pin.id)%></p>
+
+              <!-- Meta -->
+              <ul class="entry-meta">
+                <li class="time">Posted by <%= pin.user.email %></li>
+              </ul>
+
+            </div>
+
+        </div>
+      </div>
+      <% end %>
+
+
+    </div>
   </div>
-
-<% end %>
-</div>

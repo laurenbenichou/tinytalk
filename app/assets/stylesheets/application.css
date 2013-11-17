@@ -13,7 +13,7 @@
  */
 
 
-body{
+/*body{
   padding-top: 60px
 }
 
@@ -27,7 +27,7 @@ body{
 }
 
 /* for jQuery Masonry */
-.box {
+/*.box {
    margin: 5px;
    padding: 5px;
    font-size: 11px;
@@ -39,8 +39,8 @@ body{
    box-shadow: 1px 1px 10px #444;
    width: 214px;
    word-wrap:break-word;
-}
-
+}*/
+/*
 .box img {
   display: block;
   width: 100%;
@@ -55,4 +55,4 @@ body{
 
 .description{
   margin: 10px 0px 5px
-}
+}*/
