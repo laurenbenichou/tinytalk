@@ -1,0 +1,12 @@
+<div id="title_<%=board.id%>">
+<h3><a href="/boards/<%=board.id%>"><%= board.title %></a></h3>
+</div>
+<hr>
+  <p>User on the board:<p>
+  <% for(var index in users){ %>
+  <% if (users[index].avatar_file_name == null){ %>
+       <img id ="avatar" src="/assets/missing.jpg">
+    <% } else {%>
+        <img id ="avatar" src="/system/users/avatars/000/000/00<%=users[index].id%>/original/<%= users[index].avatar_file_name %>">
+    <% } %>
+<%}%>

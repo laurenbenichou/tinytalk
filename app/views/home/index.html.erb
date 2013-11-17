@@ -22,21 +22,20 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <button type="button" id="close1" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Create a board.</h4>
       </div>
       <div class="modal-body">
         <%= render :partial => 'form' %>
         </div>
       <div class="modal-footer">
-        <button type="button"id="closeModal" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="closeModal1" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 
 <div id="wrapper">
-
   <div id="pins">
     <div id="new-boards">
     </div>
@@ -46,16 +45,39 @@
     <div id="user-boards">
       <% @boards.each do |board| %>
         <div id="<%= board.id %>" class="box">
-          <h3><a href="/boards/<%= board.id %>"><%= board.title %></a></h3>
-          <hr>
-          <p>User on the board:<p>
-          <% board.users.each do |user| %>
-            <%= image_tag user.avatar.url, :id => "avatar"%>
+          <div id="title_<%= board.id %>">
+            <h3><a href="/boards/<%= board.id %>"><%= board.title %></a></h3>
+            <hr>
+            <p>User on the board:<p>
+            <% board.users.each do |user| %>
+              <%= image_tag user.avatar.url, :id => "avatar"%>
              <% end %>
+          </div>
           <button data-id="<%= board.id  %>" data-method="delete">Delete</button>
+          <button data-id="<%= board.id  %>" data-toggle="modal" data-target="#myModal2"> update board</button>
         </div>
         <% end %>
     </div>
   </div>
 </div>
+
+<div id="wrapper-update">
+  <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" id="close2" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Update a board.</h4>
+        </div>
+          <div id="modal-body2" class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+           <button type="button" id="closeModal2" class="btn btn-default " data-dismiss="modal">Close</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 

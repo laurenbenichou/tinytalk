@@ -1,11 +1,14 @@
 <div id="<%=board.id%>" class="box">
+  <div id="title_<%=board.id%>">
   <h3><a href="/boards/<%=board.id%>"><%= board.title %></a></h3>
+</div>
   <hr>
   <p>User on the board:<p>
   <% for(var index in users){ %>
   <img id ="avatar" src="/system/users/avatars/000/000/00<%=users[index].id%>/original/<%= users[index].avatar_file_name %>">
 <%}%>
 
-<button data-id="<%= board.id  %>" data-method="delete">Delete</button>
+<button data-id="<%= board.id  %>" data-method="delete">Delete</button><br/>
+<button data-id="<%= board.id  %>" data-toggle="modal" data-target="#myModal2"> update board</button>
 </div>
 
