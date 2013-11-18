@@ -3,9 +3,11 @@
   <a href="/"><img src="/assets/tinytalk.png" alt=""/></a>
   </div>
 </div>
-<div id="main-container" style=" background-color:#40434c;">
-    <div class="container">
-      <div class="span4" style="margin:auto">
+
+
+<div id="main-container" style="background-color:#40434c;">
+    <div class="container-signup" style="height:670px; background-color:#40434c;">
+      <div class="span4" style="margin-top: 100px;">
 
         <!-- Page Title -->
         <div class="page-heading">
@@ -33,13 +35,13 @@
               <%= f.label :password_confirmation %><br />
               <%= f.password_field :password_confirmation %>
 
-            <div class="form-actions">
+
               <%= f.submit "Sign up" %>
             </div>
               <% end %>
+              <%= render "devise/shared/links" %>
           </div>
         </div>
       </div>
-      <%= render "devise/shared/links" %>
   </div>
-
+</div>
