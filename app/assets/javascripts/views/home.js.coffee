@@ -1,9 +1,20 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+
+
 $(document).ready ->
   $("#upload-profile").on "click", ->
     $("#upload-form").slideToggle "slow"
+
+  $container = $("#pins")
+
+  # initialize Masonry after all images have loaded
+  $container.imagesLoaded ->
+    $container.masonry
+      itemSelector: ".box"
+      columnWidth: 240
+
 
 ############ These clear all data from form after modal is closed ##############
   $("#close1").on "click", ->

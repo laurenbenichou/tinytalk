@@ -12,13 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore
-//= require bootstrap
 //= require_tree ./templates
-//= require imagesloaded.pkgd.js
-//= require masonry.pkgd.js
-//= require bootstrap
-//= require_tree .
+//= require_tree ./all
+//= require_tree ./views
 
 
 $(function () {
