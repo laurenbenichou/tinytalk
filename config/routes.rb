@@ -1,5 +1,8 @@
 Tinytalk::Application.routes.draw do
 
+
+
+
   resources :comments, only: [:create, :edit, :update, :destroy]
 
   devise_for :users
@@ -15,6 +18,7 @@ Tinytalk::Application.routes.draw do
   resources :boards do
     resources :pins
     resources :text_pins
+    resources :links
   end
 
 end

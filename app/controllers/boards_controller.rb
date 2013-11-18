@@ -24,7 +24,7 @@ class BoardsController < ApplicationController
    def show
     @board = Board.find(params[:id])
     @user = current_user
-    @all = @board.pins + @board.text_pins
+    @all = @board.pins + @board.text_pins + @board.links
     @all.sort! {|a, b| b.created_at <=> a.created_at}
     @users = @board.users
 
