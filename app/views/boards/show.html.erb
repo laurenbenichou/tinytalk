@@ -23,6 +23,7 @@
             <ul class="sub-menu">
               <li><%= link_to "Add Image", new_board_pin_path(@board, @pin) %></li>
               <li><%= link_to "Add Text", new_board_text_pin_path(@board, @pin) %></li>
+              <li><%= link_to "Add Link", new_board_link_path(@board, @link) %></li>
             </ul>
           </li>
             <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
@@ -53,6 +54,7 @@
         <ul class="sub-menu">
           <li><%= link_to "Add Image", new_board_pin_path(@board, @pin) %></li>
           <li><%= link_to "Add Text", new_board_text_pin_path(@board, @pin) %></li>
+          <li><%= link_to "Add Link", new_board_link_path(@board, @link) %></li>
         </ul>
       </li>
         <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
