@@ -1,15 +1,27 @@
+<div class="span4" style=" margin:auto">
+  <div class="entry drop-shadow curved">
+    <div class="contact-alerts">
+    </div>
+    <div class="row-fluid">
+      <div class="span12">
+        <form>
+        <div class="form-inputs">
+          Title: <input id="board_title" type="text" name="board[title]">
 
-<form>
-  Title: <input id="board_title" type="text" name="board[title]">
+          Username: <input class="board_users_username" type="text" name="board[user][username]" placeholder="Enter the username of the user">
 
-  Username: <input class="board_users_username" type="text" name="board[user][username]" placeholder="Enter the username of the user">
+          <div id="add-users">
+            <h3>+</h3>
+          </div>
 
-  <div id="add-users">
-    <h3>+</h3>
+        <div id="user-form">
+          </div>
+        </div>
+        <div class="form-actions">
+        <button class="btn btn-default btn-sm" id="create_board">Submit</button>
+        </div>
+      </form>
+      </div>
+    </div>
   </div>
-
-  <div id="user-form">
-  </div>
-
-  <button class="btn btn-default btn-sm" id="create_board">Submit</button>
-</form>
+</div>

@@ -1,17 +1,46 @@
-<h2>Sign in</h2>
+<div class="side-nav">
+  <div class="side-nav-logo">
+  <a href="/"><img src="/assets/tinytalk.png" alt=""/></a>
+  </div>
+</div>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<div id="main-container" style=" background-color:#40434c;">
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+<div class="container">
+  <div class="span4">
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+    <!-- Page Title -->
+    <div class="page-heading">
+      <h1>Sign in</h1>
+    </div>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+    <!-- Alerts -->
+    <div class="entry drop-shadow curved">
+     <div class="contact-alerts">
+    </div>
 
-<%= render "devise/shared/links" %>
+
+    <div class="row-fluid">
+      <div class="span12">
+
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, :autofocus => true %>
+
+        <%= f.label :password %><br />
+        <%= f.password_field :password %>
+
+        <% if devise_mapping.rememberable? -%>
+        <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+        <% end -%>
+        </div>
+        <div class="form-actions"><%= f.submit "Sign in" %>
+        </div>
+        <% end %>
+      </div>
+      </div>
+       <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

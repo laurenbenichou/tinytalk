@@ -1,21 +1,45 @@
-<h2>Sign up</h2>
+<div class="side-nav">
+  <div class="side-nav-logo">
+  <a href="/"><img src="/assets/tinytalk.png" alt=""/></a>
+  </div>
+</div>
+<div id="main-container" style=" background-color:#40434c;">
+    <div class="container">
+      <div class="span4" style="margin:auto">
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+        <!-- Page Title -->
+        <div class="page-heading">
+          <h1>Sign Up!</h1>
+        </div>
+        <div class="entry drop-shadow curved">
+         <div class="contact-alerts">
+          </div>
+          <div class="row-fluid">
+            <div class="span12">
+              <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+                 <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+            <div class="form-inputs">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, :autofocus => true %>
 
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+              <%= f.label :username %><br />
+              <%= f.text_field :username, :autofocus => true %>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+              <%= f.label :password %><br />
+              <%= f.password_field :password %>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation %>
 
-<%= render "devise/shared/links" %>
+            <div class="form-actions">
+              <%= f.submit "Sign up" %>
+            </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+      <%= render "devise/shared/links" %>
+  </div>
+</div>

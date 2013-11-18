@@ -1,0 +1,4 @@
+(function() {
+  this.JST || (this.JST = {});
+  this.JST["templates/board_title"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<div class="box-img">\n  ');  for(var index in users){ ; __p.push('\n  ');  if (users[index].avatar_file_name == null){ ; __p.push('\n       <img id ="avatar" src="/assets/missing.jpg">\n    ');  } else {; __p.push('\n        <img id ="avatar" src="http://s3-us-west-1.amazonaws.com/tinytalk/users/avatars/000/000/0', users[index].id,'/original/',  users[index].avatar_file_name ,'">\n    ');  } ; __p.push('\n'); }; __p.push('\n</div>\n<div id="title_',  board.id ,'">\n  <hr>\n  <h1 class="box-headings"><a href="/boards/',  board.id ,'">',  board.title ,'</a></h1>\n</div>\n\n\n\n\n');}return __p.join('');};
+}).call(this);
