@@ -11,6 +11,7 @@ class Board < ActiveRecord::Base
 
   has_many :text_pins, dependent: :destroy
   has_many :links, dependent: :destroy
+  has_many :quotes, dependent: :destroy
 
 
   validates :title, presence: :true
