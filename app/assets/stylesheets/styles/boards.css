@@ -2231,6 +2231,7 @@ version 3.0 (http://www.gnu.org/licenses/gpl-3.0.html)
   margin: 0;
   padding: 0px;
 }
+
 body {
   background: #f1f1f1;
   margin: 0;
@@ -2345,6 +2346,7 @@ address, pre {
   position: absolute;
   z-index: 100;
   opacity: 0;
+  background-color: #f1f1f1;
   transition: all 0.4s;
   -moz-transition: all 0.4s; /* Firefox 4 */
   -webkit-transition: all 0.4s; /* Safari and Chrome */

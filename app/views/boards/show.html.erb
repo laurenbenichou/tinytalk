@@ -40,27 +40,25 @@
     <!-- Side Nav Logo -->
     <div class="side-nav-logo">
       <a href="https://generalassemb.ly/san-francisco">
-        <img src="http://www.me.upenn.edu/ipd/GA_logo_1797cog.png" alt=""/>
+        <img src="<%= @user.avatar.url %>" class="img-circle" alt=""/>
       </a>
     </div>
 
     <!-- Side Nav Text -->
     <div class="side-nav-bio">
-      <p>This is an awesome personal blog to write about awesome things</p>
+      <h2><%= @board.title %></h2>
     </div>
 
     <!-- Side Nav Menu -->
     <ul class="side-nav-menu">
-      <li><a href="index.html">Portfolio</a></li>
-      <li class="dropdown"><a href="#">Features</a>
+      <li><%= link_to "All Boards", root_path %><br></li>
+      <li class="dropdown"><a href="#">Add Pin</a>
         <ul class="sub-menu">
-          <li><a href="typography.html">Typography</a></li>
-          <li><a href="elements.html">Elements</a></li>
-          <li><a href="full-width.html">Full Width Page/Post</a></li>
+          <li><%= link_to "Add Image", new_board_pin_path(@board, @pin) %></li>
+          <li><%= link_to "Add Text", new_board_text_pin_path(@board, @pin) %></li>
         </ul>
       </li>
-        <li class="current_page_item"><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
+        <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
     </ul>
 
     <!-- Side Nav Widgets -->
@@ -79,34 +77,6 @@
 
     <!-- Side Nav Footer -->
     <div class="side-nav-footer">
-      <ul>
-        <li>
-          <a href="#" rel="alternate" data-original-title="Pinterest">
-            <img height="24" src="img/icons/glyphicons_360_pinterest@2x.png" alt="" />
-          </a>
-        </li>
-        <li>
-          <a href="#" rel="alternate" data-original-title="LinkedIn">
-            <img height="24" src="img/icons/glyphicons_377_linked_in@2x.png" alt="" />
-          </a>
-        </li>
-        <li>
-          <a href="#" rel="alternate" data-original-title="Twitter">
-            <img height="24" src="img/icons/glyphicons_392_twitter@2x.png" alt="" />
-          </a>
-        </li>
-        <li>
-          <a href="#" rel="alternate" data-original-title="Facebook">
-            <img height="24" src="img/icons/glyphicons_390_facebook@2x.png" alt="" />
-          </a>
-        </li>
-        <li>
-          <a href="#" rel="alternate" data-original-title="Dribbble">
-            <img height="24" src="img/icons/glyphicons_374_dribbble@2x.png" alt="" />
-          </a>
-        </li>
-      </ul>
-      <p>This is some awesome copyright text</p>
     </div>
 
   </div>
