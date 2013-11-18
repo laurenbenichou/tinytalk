@@ -1,49 +1,66 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="preloader"></div>
+  <div class="mobile-nav-container">
 
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <!-- <a class="navbar-brand" href="#">Rails Project</a> -->
-    <%= link_to "Rails Project", root_path, class: "navbar-brand"%>
+    <div class="mobile-nav-bar">
+
+        <button type="button" class="btn-mobile-nav" data-toggle="collapse" data-target="#mobile-nav"></button>
+
+      <!-- Mobile Logo -->
+      <div class="logo-image">
+        <a>
+
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drop Down -->
+    <div id="mobile-nav" class="collapse">
+      <ul>
+         <li><%= link_to "Login", new_user_session_path %></li>
+          <li> <%= link_to "Sign Up Now!", new_user_registration_path %></li>
+      </ul>
+    </div>
+  </div>
+  <!-- END Mobile Navigation -->
+
+  <!-- BEGIN Side Nav -->
+  <div class="side-nav-home">
+
+    <!-- Side Nav Logo -->
+    <div class="side-nav-logo">
+      <a href="/">
+        <img src="/assets/tinytalk.png" alt=""/>
+      </a>
+    </div>
+
+    <!-- Side Nav Text -->
+    <div class="side-nav-bio">
+      <p>The Smallest Social Network</p>
+    </div>
+
+    <!-- Side Nav Menu -->
+    <ul class="side-nav-menu-home">
+      <li><%= link_to "Login", new_user_session_path %></li>
+      <li id="#sign-up"><a href="#"> <%= link_to "Sign Up Now!", new_user_registration_path %></li>
+      <div id="sign-up-form">
+
+      </div>
+
+    </ul>
+
+    <!-- Side Nav Widgets -->
+    <div class="side-nav-widget">
+      <div class="side-nav-widget-inner">
+      </div>
+    </div>
+
+    <!-- Side Nav Footer -->
+    <div class="side-nav-footer">
+    </div>
+
   </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li><%= link_to "Home", root_path %></li>
-    </ul>
+  <div id="main-container">
 
-    <ul class="nav navbar-nav pull-right">
-      <% if user_signed_in? %>
-        <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "Login", new_user_session_path %></li>
-      <% end %>
-
-    </ul>
-
-<% if user_signed_in? %>
-  <div class="jumbotron">
-    <h1>Welcome!  You Signed In!</h1>
-    <p>
-      This is the home page for Tiny Talk
-    </p>
-</div>
-
-<% else %>
-  <div class="jumbotron">
-    <h1>Welcome Tiny Talk</h1>
-    <p>
-      This is the home page for Tiny Talk
-    </p>
-    <p>
-      <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-    </p>
-</div>
-<% end %>
+    <div>

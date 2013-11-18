@@ -7,6 +7,9 @@ $(document).ready ->
   $("#upload-profile").on "click", ->
     $("#upload-form").slideToggle "slow"
 
+  $("#sign-up").on "click", ->
+    $("#sign-up-form").slideToggle "slow"
+
   $container = $("#pins")
 
   # initialize Masonry after all images have loaded
