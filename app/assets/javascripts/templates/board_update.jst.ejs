@@ -23,10 +23,10 @@
               <img id ="avatar-update" src="http://s3-us-west-1.amazonaws.com/tinytalk/users/avatars/000/000/0<%=users[index].id%>/original/<%= users[index].avatar_file_name %>">
         <% } %>
         <form>
-          <div class="form-inputs">
+          <div class="form-inputs" style="float: right;">
           <input class="board_user_id_<%=users[index].id%>" type="hidden"  value="<%=users[index].id%>">
           <input class="board_id" type="hidden" value="<%= board.id %>">
-          <input class="user-remove" value="x" type="submit" data-id="<%=users[index].id%>">
+          <input width="30px" class="user-remove" value="x" type="submit" data-id="<%=users[index].id%>">
         </div>
         </form>
         <hr>
