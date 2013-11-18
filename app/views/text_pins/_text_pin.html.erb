@@ -15,7 +15,11 @@
 
               <!-- Meta -->
               <ul class="entry-meta">
-                <li class="time">Posted by <%= text_pin.user.email %></li>
+                <li class="time">Posted by <%= text_pin.user.email %></li><br>
+                <li class="time">
+                  <%= link_to "View Comments", board_text_pin_path(text_pin.board_id,text_pin.id)%>
+                  (<%= Comment.where(commentable_type: "Text_Pin", commentable_id: "#{text_pin.id}").length %>)
+                </li>
               </ul>
 
             </div>

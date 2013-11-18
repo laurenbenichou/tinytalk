@@ -18,11 +18,11 @@
 
               <!-- Content -->
               <p><%=pin.description %></p>
-
               <!-- Meta -->
               <ul class="entry-meta">
                 <li class="time">
                   <%= link_to "View Comments", board_pin_path(pin.board_id,pin.id)%>
+                  (<%= Comment.where(commentable_type: "Pin", commentable_id: "#{pin.id}").length %>)
                 </li>
               </ul>
 
