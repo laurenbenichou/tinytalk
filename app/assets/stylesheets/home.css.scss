@@ -1,7 +1,7 @@
 // Place all the styles related to the home controller here.u
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-//= require_self
+
 @import 'bootstrap';
 
 #upload-form{
@@ -35,11 +35,6 @@ text-decoration: underline;
 
 .user-remove{
   float: right;
-}
-
-
-body{
-  padding-top: 60px
 }
 
 
