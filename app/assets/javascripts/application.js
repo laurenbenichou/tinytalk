@@ -17,6 +17,7 @@
 //= require_tree ./views
 
 
+
 $(function () {
 var $container = $('#pins');
 // initialize Masonry after all images have loaded

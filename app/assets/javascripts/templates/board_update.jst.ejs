@@ -12,18 +12,18 @@
     <hr>
     <% for(var index in users){ %>
       <div class="user_on_board_<%=users[index].id%>">
-        <%= users[index].username %>
-        <% if (users[index].avatar_file_name == null){ %>
-       <img id ="avatar-update" src="/assets/missing.jpg">
-    <% } else {%>
-        <img id ="avatar-update" src="http://s3-us-west-1.amazonaws.com/tinytalk/users/avatars/000/000/0<%=users[index].id%>/thumb/<%= users[index].avatar_file_name %>">
-    <% } %>
-      <form>
-        <input class="board_user_id_<%=users[index].id%>" type="hidden"  value="<%=users[index].id%>">
-        <input class="board_id" type="hidden" value="<%= board.id %>">
-        <input class="user-remove" value="x" type="submit" data-id="<%=users[index].id%>">
-      </form>
-      <hr>
+          <%= users[index].username %>
+          <% if (users[index].avatar_file_name == null){ %>
+         <img id ="avatar-update" src="/assets/missing.jpg">
+      <% } else {%>
+          <img id ="avatar-update" src="http://s3-us-west-1.amazonaws.com/tinytalk/users/avatars/000/000/0<%=users[index].id%>/original/<%= users[index].avatar_file_name %>">
+      <% } %>
+        <form>
+          <input class="board_user_id_<%=users[index].id%>" type="hidden"  value="<%=users[index].id%>">
+          <input class="board_id" type="hidden" value="<%= board.id %>">
+          <input class="user-remove" value="x" type="submit" data-id="<%=users[index].id%>">
+        </form>
+        <hr>
       </div>
    <%}%>
   </div>
@@ -36,7 +36,7 @@
   </div>
 
   <div>
-    <button data-id="<%= board.id  %>" data-method="put">Update</button>
+    <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-method="put">Update</button>
   </div>
 
 </form>
