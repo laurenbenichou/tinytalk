@@ -1,6 +1,4 @@
 
-
-
   <div class="preloader"></div>
   <div class="mobile-nav-container">
 
@@ -11,7 +9,7 @@
       <!-- Mobile Logo -->
       <div class="logo-image">
         <a>
-          <img src="img/logo_mobile.png" alt=""/>
+          <img src="<%= @user.avatar.url %>" alt=""/>
         </a>
       </div>
 
@@ -20,15 +18,14 @@
     <!-- Mobile Drop Down -->
     <div id="mobile-nav" class="collapse">
       <ul>
-         <li><a href="index.html">Blog</a></li>
-        <li class="dropdown"><a href="#">Features</a>
-          <ul class="sub-menu">
-            <li><a href="typography.html">Typography</a></li>
-            <li><a href="elements.html">Elements</a></li>
-            <li><a href="full-width.html">Full Width Page/Post</a></li>
-          </ul>
-        </li>
-        <li><a href="contact.html">Contact</a></li>
+         <li><%= link_to "All Boards", root_path %><br></li>
+          <li class="dropdown"><a href="#">Add Pin</a>
+            <ul class="sub-menu">
+              <li><%= link_to "Add Image", new_board_pin_path(@board, @pin) %></li>
+              <li><%= link_to "Add Text", new_board_text_pin_path(@board, @pin) %></li>
+            </ul>
+          </li>
+            <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
       </ul>
     </div>
   </div>
@@ -39,14 +36,14 @@
 
     <!-- Side Nav Logo -->
     <div class="side-nav-logo">
-      <a href="https://generalassemb.ly/san-francisco">
+      <a href="/">
         <img src="<%= @user.avatar.url %>" class="img-circle" alt=""/>
       </a>
     </div>
 
     <!-- Side Nav Text -->
     <div class="side-nav-bio">
-      <h2><%= @board.title %></h2>
+      <h2><strong>Board:</strong><%= @board.title %></h2>
     </div>
 
     <!-- Side Nav Menu -->
@@ -77,6 +74,12 @@
 
     <!-- Side Nav Footer -->
     <div class="side-nav-footer">
+      <p> Users on this board </p>
+      <ul>
+        <% @users.each do |user| %>
+          </li><%= image_tag user.avatar.url, :id => "board_avatar"%></li>
+          <% end %>
+      </ul>
     </div>
 
   </div>
@@ -95,21 +98,9 @@
     <div id="container">
 
       <%= render @all %>
-      <%#= link_to "Add Image", new_board_pin_path(@board, @pin) %><br>
+
     </div>
 </div>
 
 
-
-
-
-
-<%
-=begin %>
-<%= link_to "Add Image", new_board_pin_path(@board, @pin) %><br>
-<%= link_to "Add Text", new_board_text_pin_path(@board, @pin) %><br>
-<%= link_to "See Only Images", board_pins_path(@board) %><br>
-<%= link_to "See Only Text", board_text_pins_path(@board) %><br>
-<%
-=end %>
 

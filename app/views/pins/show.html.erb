@@ -1,3 +1,83 @@
+<div class="preloader"></div>
+  <div class="mobile-nav-container">
+
+    <div class="mobile-nav-bar">
+
+        <button type="button" class="btn-mobile-nav" data-toggle="collapse" data-target="#mobile-nav"></button>
+
+      <!-- Mobile Logo -->
+      <div class="logo-image">
+        <a>
+          <img src="<%= @user.avatar.url %>" alt=""/>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drop Down -->
+    <div id="mobile-nav" class="collapse">
+      <ul>
+         <li><%= link_to "All Boards", root_path %><br></li>
+          <li class="dropdown"><a href="#">Add Pin</a>
+            <ul class="sub-menu">
+              <li><%= link_to "Add Image", new_board_pin_path(@board, @pin) %></li>
+              <li><%= link_to "Add Text", new_board_text_pin_path(@board, @pin) %></li>
+            </ul>
+          </li>
+            <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  </div>
+  <!-- END Mobile Navigation -->
+
+  <!-- BEGIN Side Nav -->
+  <div class="side-nav">
+
+    <!-- Side Nav Logo -->
+    <div class="side-nav-logo">
+      <a href="/">
+        <img src="<%= @user.avatar.url %>" class="img-circle" alt=""/>
+      </a>
+    </div>
+
+    <!-- Side Nav Text -->
+    <div class="side-nav-bio">
+      <h2><strong>Board:</strong><%= @board.title %></h2>
+    </div>
+
+    <!-- Side Nav Menu -->
+    <ul class="side-nav-menu">
+      <li><%= link_to "Back", board_path(@board) %><br></li>
+      <li class="dropdown"><a href="#">Add Pin</a>
+        <ul class="sub-menu">
+          <li><%= link_to "Add Image", new_board_pin_path(@board, @pin) %></li>
+          <li><%= link_to "Add Text", new_board_text_pin_path(@board, @pin) %></li>
+        </ul>
+      </li>
+        <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+    </ul>
+
+    <!-- Side Nav Widgets -->
+    <div class="side-nav-widget">
+      <div class="side-nav-widget-inner">
+        <ul>
+          <li class="widget widget_search">
+            <form role="search" method="get" id="searchform" action="#">
+                <input type="text" placeholder="Search" value="" name="s" id="s" />
+                <input type="submit" id="searchsubmit" value="Search" />
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Side Nav Footer -->
+    <div class="side-nav-footer">
+    </div>
+
+  </div>
+
+
 <div id="main-container">
     <div class="container">
 

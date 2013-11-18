@@ -15,8 +15,9 @@ class PinsController < ApplicationController
   # GET /pins/1
   # GET /pins/1.json
   def show
+    @user = current_user
     @pin = Pin.find(params[:id])
-    @board = params[:board_id]
+    @board = Board.find(params[:board_id])
     @comment = Comment.new
     @comments = Comment.where(commentable_type: Pin, commentable_id: @pin)
 

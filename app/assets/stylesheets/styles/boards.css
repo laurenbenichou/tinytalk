@@ -4782,3 +4782,8 @@ input.span1,textarea.span1,.uneditable-input.span1{width:28px;}
   }
 }
 
+#board_avatar{
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+}
