@@ -1,0 +1,80 @@
+// Place all the styles related to the home controller here.u
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bootstrap';
+
+#upload-form{
+  display: none;
+}
+
+#upload-profile:hover{
+text-decoration: underline;
+}
+
+
+#avatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  float: left;
+}
+
+.box button{
+  float:right;
+}
+
+
+#avatar-update{
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  float: left;
+}
+
+
+.user-remove{
+  float: right;
+}
+
+
+.footer {
+  margin-top: 50px;
+  color: #999;
+
+a{
+    color: #555;
+  }
+}
+
+/* for jQuery Masonry */
+.box {
+   margin: 5px;
+   padding: 5px;
+   font-size: 11px;
+   line-height: 1.4em;
+   float: left;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   box-shadow: 1px 1px 10px #444;
+   width: 214px;
+   word-wrap:break-word;
+}
+
+.box img {
+  display: block;
+  width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.footer{
+  margin-left: 10px;
+}
+
+.description{
+  margin: 10px 0px 5px
+}
+
