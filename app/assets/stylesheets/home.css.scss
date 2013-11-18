@@ -11,7 +11,7 @@ text-decoration: underline;
 }
 
 #avatar{
-  width: auto;
+  width: 30px;
   height: 30px;
   border-radius: 50px;
   float: left;
@@ -22,12 +22,17 @@ text-decoration: underline;
 }
 
 #avatar-update{
-  width: auto;
+  width: 30px;
   height: 30px;
   border-radius: 50px;
+  float: left;
 }
 
 .user-remove{
   float: right;
 }
+
+
+
+
 

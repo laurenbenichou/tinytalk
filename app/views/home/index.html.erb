@@ -38,6 +38,7 @@
 <div id="wrapper">
   <div id="pins">
     <div id="new-boards">
+
     </div>
   </div>
 
@@ -48,18 +49,19 @@
           <div id="title_<%= board.id %>">
             <h3><a href="/boards/<%= board.id %>"><%= board.title %></a></h3>
             <hr>
-            <p>User on the board:<p>
+            <p>User on the board:</p>
             <% board.users.each do |user| %>
               <%= image_tag user.avatar.url, :id => "avatar"%>
              <% end %>
           </div>
-          <button data-id="<%= board.id  %>" data-method="delete">Delete</button>
-          <button data-id="<%= board.id  %>" data-toggle="modal" data-target="#myModal2"> update board</button>
+          <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-method="delete">Delete</button>
+          <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-toggle="modal" data-target="#myModal2"> update board</button>
         </div>
         <% end %>
     </div>
   </div>
 </div>
+
 
 <div id="wrapper-update">
   <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -79,5 +81,7 @@
     </div>
   </div>
 </div>
+
+
 
 

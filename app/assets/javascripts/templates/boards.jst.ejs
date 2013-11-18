@@ -1,16 +1,16 @@
 <div id="<%=board.id%>" class="box">
   <div id="title_<%=board.id%>">
-  <h3><a href="/boards/<%=board.id%>"><%= board.title %></a></h3>
-</div>
+    <h3><a href="/boards/<%=board.id%>"><%= board.title %></a></h3>
+  </div>
   <hr>
   <p>User on the board:<p>
-  <% if (users[index].avatar_file_name == null){ %>
-       <img id ="avatar-update" src="/assets/missing.jpg">
+  <% for(var index in users){ %>
+    <% if (users[index].avatar_file_name == null){ %>
+      <img id ="avatar-update" src="/assets/missing.jpg">
     <% } else {%>
-        <img id ="avatar-update" src="http://s3-us-west-1.amazonaws.com/tinytalk/users/avatars/000/000/0<%=users[index].id%>/original/<%= users[index].avatar_file_name %>">
-    <% } %>
-
-<button data-id="<%= board.id  %>" data-method="delete">Delete</button><br/>
-<button data-id="<%= board.id  %>" data-toggle="modal" data-target="#myModal2"> update board</button>
+       <img id ="avatar-update" src="http://s3-us-west-1.amazonaws.com/tinytalk/users/avatars/000/000/0<%=users[index].id%>/original/<%= users[index].avatar_file_name %>">
+    <%}%>
+  <%}%>
+<button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-method="delete">Delete</button><br/>
+<button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-toggle="modal" data-target="#myModal2"> update board</button>
 </div>
-

@@ -17,7 +17,6 @@
 //= require_tree ./templates
 //= require imagesloaded.pkgd.js
 //= require masonry.pkgd.js
-//= require bootstrap
 //= require_tree .
 
 
