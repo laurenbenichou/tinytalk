@@ -1,55 +1,90 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <!-- <a class="navbar-brand" href="#">Rails Project</a> -->
-    <%= link_to "Rails Project", root_path, class: "navbar-brand"%>
+  <div class="preloader"></div>
+  <div class="mobile-nav-container">
+
+    <div class="mobile-nav-bar">
+
+        <button type="button" class="btn-mobile-nav" data-toggle="collapse" data-target="#mobile-nav"></button>
+
+      <!-- Mobile Logo -->
+      <div class="logo-image">
+        <a>
+
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drop Down -->
+    <div id="mobile-nav" class="collapse">
+      <ul>
+         <li><br></li>
+          <li class="dropdown"><a href="#">Add Pin</a>
+            <ul class="sub-menu">
+              <li></li>
+              <li></li>
+            </ul>
+          </li>
+            <li> </li>
+      </ul>
+    </div>
   </div>
+  <!-- END Mobile Navigation -->
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li><%= link_to "Home", root_path %></li>
+  <!-- BEGIN Side Nav -->
+  <div class="side-nav">
+
+    <!-- Side Nav Logo -->
+    <div class="side-nav-logo">
+      <a href="/">
+        <img src="<%= @user.avatar.url %>" class="img-circle" alt=""/>
+      </a>
+    </div>
+
+    <!-- Side Nav Text -->
+    <div class="side-nav-bio">
+      <h2><strong><%= @user.username%></strong></h2>
+    </div>
+
+    <!-- Side Nav Menu -->
+    <ul class="side-nav-menu">
+        <li id="upload-profile" class="dropdown"><a href="#">Upload Profile Picture</a>
+        <div id="upload-form">
+          <%= form_for @user, url:{ action: "update" } , :html => { :multipart => true } do |form| %>
+          <%= form.file_field :avatar %>
+          <%= form.submit %>
+          <% end %>
+        </div>
+        <a data-toggle="modal" data-target="#myModal">
+        Create a board
+        </a>
     </ul>
 
-    <ul class="nav navbar-nav pull-right">
-      <% if user_signed_in? %>
-        <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "Login", new_user_session_path %></li>
-      <% end %>
+    <!-- Side Nav Widgets -->
+    <div class="side-nav-widget">
+      <div class="side-nav-widget-inner">
+        <ul>
+          <li class="widget widget_search">
+            <form role="search" method="get" id="searchform" action="#">
+                <input type="text" placeholder="Search" value="" name="s" id="s" />
+                <input type="submit" id="searchsubmit" value="Search" />
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-    </ul>
-
-
-<h1>Welcome <%= @user.username%></h1>
-
-<%= image_tag @user.avatar.url, :class => "img-circle", :height => "100px", :width => "100px" %></br>
-
-<div id="upload-profile">
-  <p>upload a profile photo</p>
+    <!-- Side Nav Footer -->
+    <div class="side-nav-footer">
+    </div>
 </div>
+  <ul class="category-filter">
+    <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "selected" %></li>
+    <li><%= link_to "Edit Profile", edit_user_registration_path, :class => "selected" %></li>
+  </ul>
 
-<div id="upload-form">
-  <%= form_for @user, url:{ action: "update" } , :html => { :multipart => true } do |form| %>
-  <%= form.file_field :avatar %>
-  <%= form.submit %>
-  <% end %>
-</div>
-
-<%= @user.username %></br>
-<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-  Create a board
-</button>
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <!-- This form is a modal to create a board -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -66,32 +101,45 @@
   </div>
 </div>
 
-<div id="wrapper">
-  <div id="pins">
-    <div id="new-boards">
 
-    </div>
-  </div>
+<div id= "main-container">
 
-  <div id="pins">
-    <div id="user-boards">
-      <% @boards.each do |board| %>
-        <div id="<%= board.id %>" class="box">
-          <div id="title_<%= board.id %>">
-            <h3><a href="/boards/<%= board.id %>"><%= board.title %></a></h3>
-            <hr>
-            <p>User on the board:</p>
-            <% board.users.each do |user| %>
-              <%= image_tag user.avatar.url, :id => "avatar"%>
-             <% end %>
+
+        <div id= "wrapper">
+
+
+
+            <!-- Board already in database -->
+            <div id="user-boards">
+              <div id="new-boards">
+              <!-- This is where new boards get appended -->
+            </div>
+
+            <% @boards.each do |board| %>
+              <div id="<%= board.id %>" class="box" >
+
+                <div id="title_<%= board.id %>">
+
+                    <h1 class="heading"><a href="/boards/<%= board.id %>"><%= board.title %></a></h1>
+                    <hr>
+                    <p>User on the board:</p>
+                    <% board.users.each do |user| %>
+                      <%= image_tag user.avatar.url, :id => "avatar", :title =>  user.username %>
+                     <% end %>
+
+                </div>
+
+                <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-method="delete">Delete</button>
+
+                <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-toggle="modal" data-target="#myModal2"> update board</button>
+
+              </div>
+                      <% end %>
           </div>
-          <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-method="delete">Delete</button>
-          <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-toggle="modal" data-target="#myModal2"> update board</button>
         </div>
-        <% end %>
-    </div>
   </div>
 </div>
+
 
 
 <div id="wrapper-update">
