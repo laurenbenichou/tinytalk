@@ -2582,6 +2582,7 @@ textarea:focus {
   height: 100%;
   position: fixed;
   z-index: 600;
+  word-wrap:break-word;
 }
 
 .side-nav-logo {
@@ -2861,6 +2862,7 @@ textarea:focus {
   color: #D2D4DB;
   text-align: center;
   margin: auto;
+  word-wrap:break-word;
 }
 
 /* Sub menu */
