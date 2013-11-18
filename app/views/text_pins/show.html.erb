@@ -110,6 +110,31 @@
               <!-- Content -->
               <p><%=@text_pin.content %></p>
 
+              <!-- Comments -->
+              <div id="allcomments">
+              <ul class="entry-meta">
+                <h2 class="heading">Comments</h2>
+                <% @comments.each do |comment| %>
+                  <li id="comment<%= comment.id %>">
+                    <p>
+                      <strong><%= User.find(comment.user_id).username %></strong>: <%= comment.content %>
+                      <button data-id="<%= comment.id  %>" data-method="commdelete">Delete</button>
+                    </p>
+                  </li><br>
+                <% end %>
+              </ul><br>
+              </div> <!-- Closing All Comments -->
+
+              <!-- New Comments -->
+              <%= form_for @comment do |f| %>
+                <%= f.text_area :content, placeholder: "Enter Comment Here" %>
+                <%= f.hidden_field :commentable_type, value: "Text_Pin" %>
+                <%= f.hidden_field :commentable_id, value: @text_pin.id %>
+                <%= f.hidden_field :board_id, value: @board.id %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+                <%= f.submit 'Submit Comment', id: "commentsubmit" %>
+              <% end %>
+
               <!-- Meta -->
               <ul class="entry-meta">
                 <li class="time">1 month ago</li>
