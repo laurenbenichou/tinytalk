@@ -10,7 +10,7 @@
           <div class="form-inputs">
           Update Title: <input id="board_title_update" type="text" name="board[title]">
         </div>
-        <div>
+      </div>
           <hr>
           <h4>Users:</h4>
           <hr>
@@ -27,21 +27,31 @@
           <input class="board_user_id_<%=users[index].id%>" type="hidden"  value="<%=users[index].id%>">
           <input class="board_id" type="hidden" value="<%= board.id %>">
           <input class="user-remove" value="x" type="submit" data-id="<%=users[index].id%>">
+        </div>
         </form>
         <hr>
       </div>
     <%}%>
-  </div>
 
+
+  <div class="form-actions">
   <div id="add-users2">
     <h3>+</h3>
   </div>
+</div>
 
+  <div class="form-inputs">
   <div id="user-form2">
   </div>
-</div>
+  </div>
+
    <div class="form-actions">
     <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-method="put">Update</button>
   </div>
 
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
