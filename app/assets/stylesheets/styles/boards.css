@@ -2354,7 +2354,8 @@ address, pre {
   -o-transition: all 0.4s; /* Opera */
 }
 #main-container {
-  padding-left: 302px;
+  padding-left: 200px;
+  background-color: #f1f1f1;
 }
 .heading {
   font-size: 12px;
@@ -2410,7 +2411,7 @@ address, pre {
   border:none;
   text-indent:100%;
   background-color: #40434c;
-  background-image: url(../img/backtotop.png);
+  background-image: url(/assets/uptotop.png);
   background-repeat: repeat;
   background-position: 0px 0px;
   border-radius: 5px;
@@ -2422,7 +2423,7 @@ address, pre {
 }
 #toTop:hover {
   background-color: #000;
-  background-image: url(../img/backtotop.png);
+  background-image: url(/assets/uptotop.png);
   background-position: 0px -50px;
 }
 #toTop:active, #toTop:focus {
@@ -2577,7 +2578,7 @@ textarea:focus {
 }
 .side-nav {
   background: #40434c;
-  width: 300px;
+  width: 200px;
   height: 100%;
   position: fixed;
   z-index: 600;
@@ -2625,7 +2626,7 @@ textarea:focus {
 .side-nav-stripes {
   background: url(../img/stripes.png);
   height: 12px;
-  width: 200px;
+  width: 100px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -2647,7 +2648,7 @@ textarea:focus {
   color: #808693;
   margin-top: 11px;
   font-size: 12px;
-  width: 200px;
+  width: 100px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -2659,10 +2660,10 @@ textarea:focus {
 .side-nav-menu {
   margin-top: 44px;
   display: block;
-  width: 200px;
+  width: 100px;
   margin-left:auto;
   margin-right:auto;
-  border: 8px #4C5059 solid;
+  border: 4px #4C5059 solid;
   border-radius: 5px;
   background: #4C5059;
   box-shadow: 0px 0px 0px 1px #676B77;
@@ -2854,11 +2855,12 @@ textarea:focus {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8094c9', endColorstr='#5c72aa',GradientType=0 ); /* IE6-9 */
 }
 .side-nav-bio {
-  padding: 22px 44px 0 44px;
+  padding: 25px;
 }
 .side-nav-bio p {
   color: #D2D4DB;
   text-align: center;
+  margin: auto;
 }
 
 /* Sub menu */
@@ -2870,11 +2872,11 @@ textarea:focus {
   height: 21px;
   width: 21px;
   position: absolute;
-  right: 12px;
+  right: 8px;
   top: 11px;
   border-radius: 3px;
   background-color: #2B2D33;
-  background-image: url(../img/icon_menu_expand.png);
+  background-image: url(/assets/menu.png);
   background-position: center center;
   background-size: 7px 7px;
   background-repeat: no-repeat;
@@ -3487,7 +3489,7 @@ textarea:focus {
 /*-----------------------------------------------------------------------------------*/
 
 .category-filter {
-  padding-left: 325px;
+  padding-left: 210px;
   padding-bottom: 18px;
   padding-top: 18px;
   border-bottom: 1px dotted #ccc;
@@ -4211,7 +4213,7 @@ a img.aligncenter {
 .widget_search .screen-reader-text { display:none; }
 .widget_search { margin: 0 0 0 0 !important;padding: 0 0 0 0 !important; z-index: 100000;}
 .widget_search .widgettitle { display:none; }
-#searchform input { background: transparent; margin: 0 0 0 0; border: none; }
+#searchform input { background: transparent; margin: 0 0 0 0; border: none; width: 92%; }
 #searchform #s { border-radius: 5px; color: #dadde4; background: #36393F; }
 .entry #searchform #s { border-radius: 5px; color: #333; background: #f1f1f1; border: 1px solid #ccc; }
 #searchform #searchsubmit {
@@ -4343,7 +4345,7 @@ input.span1,textarea.span1,.uneditable-input.span1{width:28px;}
 .dropdown:before{content:"";height:21px!important;width:21px!important;position:absolute;right:5px!important;top:9px!important;border-radius:3px;background-color:transparent!important;background-image:url(../img/icon_menu_expand.png);background-position:center center;background-size:7px 7px;background-repeat:no-repeat;}
 .btn-mobile-nav{height:45px;width:45px;border:none;background-size:24px 15px;background-repeat:no-repeat;background-position:center center;float:right;margin-top:4px;cursor:pointer;border-radius:5px;}
 .isotope-loadmore{padding-left:22px;}
-#main-container{padding-left:20px;padding-right:20px;}
+#main-container{padding-left:20px;padding-right:20px; background-color: #f1f1f1;}
 .body-container{padding-left:20px;padding-right:20px;margin-top:65px;}
 .children{margin:0 0 0 40px;}
 .navbar-fixed-top,.navbar-fixed-bottom,.navbar-static-top{margin-left:-20px;margin-right:-20px;}

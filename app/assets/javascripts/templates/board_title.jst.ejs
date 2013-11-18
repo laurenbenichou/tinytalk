@@ -1,12 +1,17 @@
-<div id="title_<%=board.id%>">
-<h3><a href="/boards/<%=board.id%>"><%= board.title %></a></h3>
-</div>
-<hr>
-  <p>User on the board:<p>
+<div class="box-img">
   <% for(var index in users){ %>
   <% if (users[index].avatar_file_name == null){ %>
        <img id ="avatar" src="/assets/missing.jpg">
     <% } else {%>
-        <img id ="avatar" src="http://s3-us-west-1.amazonaws.com/tinytalk/users/avatars/000/000/0<%=users[index].id%>/thumb/<%= users[index].avatar_file_name %>">
+        <img id ="avatar" src="http://s3-us-west-1.amazonaws.com/tinytalk/users/avatars/000/000/0<%=users[index].id%>/original/<%= users[index].avatar_file_name %>">
     <% } %>
 <%}%>
+</div>
+<div id="title_<%= board.id %>">
+  <hr>
+  <h1 class="box-headings"><a href="/boards/<%= board.id %>"><%= board.title %></a></h1>
+</div>
+
+
+
+

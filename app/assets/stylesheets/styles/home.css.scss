@@ -10,11 +10,22 @@ margin-bottom: 0px;
 }
 
 #upload-form{
+  width: 273px;
   display: none;
+  background-color: #42464d;
+  box-shadow: 4px #676B77;
+  border: 4px #4C5059 solid
 }
-
+#upload-form input{
+  margin: auto;
+  width: inherit;
+  background-color: #42464d;
+  color: black;
+  border: none;
+}
 #sign-up-form{
   display: none;
+  background-color: #40434c;
 }
 
 
@@ -24,10 +35,14 @@ text-decoration: underline;
 
 
 #avatar{
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50px;
   float: left;
+}
+
+#wrapper{
+  margin-top: 20px;
 }
 
 .box button{
@@ -36,8 +51,8 @@ text-decoration: underline;
 
 
 #avatar-update{
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50px;
   float: left;
 }
@@ -63,15 +78,38 @@ a{
    padding: 5px;
    font-size: 11px;
    line-height: 1.4em;
-   float: left;
-   -webkit-border-radius: 5px;
-   -moz-border-radius: 5px;
-   border-radius: 5px;
-   box-shadow: 1px 1px 10px #444;
-   width: 214px;
+   box-shadow: 1px 1px 10px #949393;
+   width: 180px;
    word-wrap:break-word;
+   float:left;
+   min-height:1px;
+   margin-left:20px;
 }
 
+.box-headings{
+  text-align: center;
+  font-size: 20px;
+  color: #666;
+  font-weight:bold;
+  height: 40px;
+  width: 100%;
+
+}
+
+.box-img{
+  text-align: center;
+  font-size: 20px;
+  color: #666;
+  font-weight:bold;
+  height: 60px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.box-button{
+  float: left;
+  margin-top: 10px;
+}
 .box img {
   display: block;
   width: 100%;

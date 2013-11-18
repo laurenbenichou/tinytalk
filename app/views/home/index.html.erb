@@ -17,10 +17,13 @@
     <div id="mobile-nav" class="collapse">
       <ul>
          <li><br></li>
-          <li class="dropdown"><a href="#">Add Pin</a>
+          <li class="dropdown"><a href="#">Options</a>
             <ul class="sub-menu">
-              <li></li>
-              <li></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "selected" %></a></li>
+              <li><%= link_to "Edit Profile", edit_user_registration_path, :class => "selected" %></li>
+              <li><a data-toggle="modal" data-target="#myModal">
+                Create a board
+              </a></li>
             </ul>
           </li>
             <li> </li>
@@ -41,7 +44,7 @@
 
     <!-- Side Nav Text -->
     <div class="side-nav-bio">
-      <h2><strong><%= @user.username%></strong></h2>
+      <h2 style="color: black;"><strong><%= @user.username%></strong></h2>
     </div>
 
     <!-- Side Nav Menu -->
@@ -79,8 +82,8 @@
 </div>
 
   <ul class="category-filter">
-    <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "selected" %></li>
-    <li><%= link_to "Edit Profile", edit_user_registration_path, :class => "selected" %></li>
+    <li><a><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "selected" %></a></li>
+    <li><a><%= link_to "Edit Profile", edit_user_registration_path, :class => "selected" %></a></li>
   </ul>
 
 
@@ -105,41 +108,39 @@
 
 
 <div id= "main-container">
+  <div id= "wrapper">
+    <div id="pins">
+    <div id="new-boards">
+        <!-- This is where new boards get appended -->
+      </div>
+    </div>
+        <!-- Board already in database -->
 
-
-        <div id= "wrapper">
-
-
-
-            <!-- Board already in database -->
-            <div id="user-boards">
-              <div id="new-boards">
-              <!-- This is where new boards get appended -->
-            </div>
-
-            <% @boards.each do |board| %>
-              <div id="<%= board.id %>" class="box" >
-
-                <div id="title_<%= board.id %>">
-
-                    <h1 class="heading"><a href="/boards/<%= board.id %>"><%= board.title %></a></h1>
-                    <hr>
-                    <p>User on the board:</p>
-                    <% board.users.each do |user| %>
-                      <%= image_tag user.avatar.url, :id => "avatar", :title =>  user.username %>
-                     <% end %>
-
-                </div>
-
-                <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-method="delete">Delete</button>
-
-                <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-toggle="modal" data-target="#myModal2"> update board</button>
-
+      <div id="user-boards">
+        <div id="pins">
+        <% @boards.each do |board| %>
+          <div id="<%= board.id %>" class="box" >
+            <div id="title_<%= board.id %>">
+             <div class="box-img">
+                  <% board.users.each do |user| %>
+                   <%= image_tag user.avatar.url, :id => "avatar", :title =>  user.username %>
+                  <% end %>
               </div>
-                      <% end %>
+               <hr>
+              <h1 class="box-headings"><a href="/boards/<%= board.id %>"><%= board.title %></a></h1>
+            </div>
+            <hr>
+            <div class="box-button">
+            <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-method="delete">Delete</button>
+
+            <button class="btn btn-default btn-sm" data-id="<%= board.id  %>" data-toggle="modal" data-target="#myModal2"> update board</button>
+            </div>
           </div>
-        </div>
+           <% end %>
+      </div>
+    </div>
   </div>
+    </div>
 </div>
 
 
