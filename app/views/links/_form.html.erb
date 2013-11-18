@@ -1,0 +1,66 @@
+<div id="main-container">
+    <div class="container">
+
+      <div class="span4">
+
+        <!-- Page Title -->
+        <div class="page-heading">
+          <h1>Add Link</h1>
+        </div>
+
+          <!-- Alerts -->
+          <div class="entry drop-shadow curved">
+            <div class="contact-alerts">
+        </div>
+
+
+          <div class="row-fluid">
+            <div class="span12">
+
+            <%= simple_form_for([@board,@link]) do |f| %>
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+                <%= f.input :link %>
+                <%= f.input :title %>
+                <%= f.hidden_field :board_id, value: @board.id %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit,:html => {:class => 'contact-submit'} %>
+              </div>
+            <% end %>
+            </div>
+            </div>
+
+        <!-- Contact Form  -->
+        <!-- <form id="contact" action="contact.php">
+          <div class="row-fluid">
+            <div class="span12">
+              <input id="name" type="text" value="" placeholder="Name" name="name">
+            </div>
+          </div>
+
+          <div class="row-fluid">
+            <div class="span12">
+              <input id="email" type="text" value="" placeholder="Email" name="email">
+            </div>
+          </div>
+
+          <div class="row-fluid">
+            <div class="span12">
+              <textarea id="message" required="" rows="6" placeholder="Message" name="message"></textarea>
+            </div>
+          </div>
+
+          <a class="contact-submit" href="#">Submit</a>
+
+        </form> -->
+
+      </div>
+
+    </div>
+  </div>
+
+
+
